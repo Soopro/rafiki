@@ -517,7 +517,10 @@ booklet = stapler(pages, paged=1, perpage=12)
 barcode is a helper function can count data field.
 You can use it for count how many post with same terms.
 etc., use to count 'category',
-you will get {'tech': 10, 'food': 20, 'photo':99, ....}
+you will get a list:
+```
+  [{'count': 2, 'key': u'test'}, {'count': 2, 'key': u'fuck'}, {'count': 1, 'key': u'inneral'}, {'count': 1, 'key': u'xxx'}, {'count': 1, 'key': u'ahha'}]
+```
 
 After that you can use `taxonomy` context to make your own Category count.
 
@@ -527,22 +530,42 @@ After that you can use `taxonomy` context to make your own Category count.
 value of specified field.
 
 The output dict will follow:
-* `field`: the count number of this field.
+* `key`: **[ str ]** the content key. for category, the key equals alias, use taxonomy context to find the title. for tags the key equals title. (see the example below.)
 
 **Usage**
 
 ```python
-barcode(raw_pages[, field])
+barcode(raw_pages[, field, sort[, desc]])
 ```
 
 `raw_pages`: **[ list ]** original list you want to count.
 
 `field`: **[ str ]** default is `category`. field you want to cound.
 
+`sort`: **[ bool ]** default is `True`. return sorted result.
+
+`desc`: **[ bool ]** default is `True`. return sorted result by `DESC`.
+
+
 ***Example***
 
 ```python
-count = barcode(pages, field="category")
+<!-- this part will create a dict of cateory terms title -->
+{% set term_title = {} %}
+{% for term in tax.category.terms %}
+{% do term_title.update({term.alias:term.title}) %}
+{% endfor %}
+
+<!-- use for get category -->
+{% for bar in barcode(pages, field="category") %}
+Category: {{term_title[bar.key]}} Count: {{bar.count}}
+{% endfor %}
+
+<!-- use for get tags -->
+{% for bar in barcode(pages, 'tags') %}
+Tag: {{bar.key}} Count: {{bar.count}}
+{% endfor %}
+
 ```
 
 ---------------------------------
