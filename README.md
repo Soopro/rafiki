@@ -1,3 +1,5 @@
+version: 1.0.0
+
 # Theme Develop Documentation
 
 1. Theme Config
@@ -22,4 +24,4 @@ Before you read any document of this repo, you have to learn some definition:
 2. [Learn how to write theme config to define your theme.](theme_config.md)
 3. [Learn Jinja2 template to know how to write template language.](jinja2_template.md)
 4. [Learn Peon to know the develop tools.](https://github.com/Soopro/peon)
-5. [If you good engouh, learn Angular template to know how to write template able to use canvas editor language.](angular_temoplate.md)
+5. [If you good engouh, learn Angular template to know how to write template able to use canvas editor language.](angular_template.md)
