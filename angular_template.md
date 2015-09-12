@@ -19,7 +19,7 @@ You can use our Develop tool `peon` to do it. (A secret key is required, which y
 
 template file extensions must be `.tpl` only. otherwise will never work.
 
-**Those template didn't support includes**
+**Those template didn't support ng-include**
 
 <br><br>
 
