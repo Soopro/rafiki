@@ -21,7 +21,7 @@ template file extensions must be `.tpl` only. otherwise will never work.
 
 **Those template didn't support ng-include**
 
-you might use [Peon](https://github.com/Soopro/peon) to help you get .html `include` like jinja2.
+*you may use [Peon](https://github.com/Soopro/peon) to help you get .html `include` like jinja2.*
 
 <br><br>
 
