@@ -19,7 +19,7 @@ You can use our Develop tool `peon` to do it. (A secret key is required, which y
 
 template file extensions must be `.tpl` only. otherwise will never work.
 
-**Those template didn't support ng-include**
+**Those template didn't support include and ng-include**
 
 *you may use [Peon](https://github.com/Soopro/peon) to help you get .html `include` like jinja2.*
 
