@@ -20,6 +20,6 @@ Before you read any document of this repo, you have to learn some definition:
 
 1. [Learn Pyco to know how to start localhost to develop.](https://github.com/Soopro/pyco)
 2. [Learn how to write theme config to define your theme.](theme_config.md)
-3. [Learn Jinja2 template to know how to write template language.](jinja2_temoplate.md)
+3. [Learn Jinja2 template to know how to write template language.](jinja2_template.md)
 4. [Learn Peon to know the develop tools.](https://github.com/Soopro/peon)
 5. [If you good engouh, learn Angular template to know how to write template able to use canvas editor language.](angular_temoplate.md)
