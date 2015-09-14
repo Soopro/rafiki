@@ -194,11 +194,11 @@ Supported form view editor. you need add to top level of theme config
 
 **Base**
 
-* `key` : Data context alias, should not duplicated.
-
-* `name`: The name display above input filed.
-
-* `type`: Filed type.
+* `editor_fields`: **[ dict ]**fields of form view
+  * `[ template_alias ]`: **[ list ]**
+    1 `key` : Data context alias, should not duplicated.
+    2 `name`: The name display above input filed.
+    3 `type`: Filed type.
 
 
 **Filed Types**
@@ -224,78 +224,80 @@ Supported form view editor. you need add to top level of theme config
 
 ```json
 {
-	"[ template_alias ]": [
+  "editor_fields":{
 
-		{
-			"key": "title",
-			"name": "Title",
-			"type": "input",
-			"max": 120
-		},
+  	"[ template_alias ]": [
 
-		{
-			"key": "description",
-			"name": "Description",
-			"type": "textarea",
-			"max": 600
-		},
+  		{
+  			"key": "title",
+  			"name": "Title",
+  			"type": "input",
+  			"max": 120
+  		},
 
-		{
-			"key": "featured_img",
-			"name": "Featured Image",
-			"type": "media"
-		},
+  		{
+  			"key": "description",
+  			"name": "Description",
+  			"type": "textarea",
+  			"max": 600
+  		},
 
-		{
-			"key": "background",
-			"name": "Background",
-			"type": "bg"
-		},
+  		{
+  			"key": "featured_img",
+  			"name": "Featured Image",
+  			"type": "media"
+  		},
 
-		{
-			"key": "gallery",
-			"name": "Gallery",
-			"type": "gallery"
-		},
+  		{
+  			"key": "background",
+  			"name": "Background",
+  			"type": "bg"
+  		},
 
-		{
-			"key": "button",
-			"name": "Some Button",
-			"type": "button"
-		},
+  		{
+  			"key": "gallery",
+  			"name": "Gallery",
+  			"type": "gallery"
+  		},
 
-		{
-			"key": "select",
-			"name": "Some Select",
-			"type": "select",
-			"options": [
-				{"name":"item#1", "value":0}
-				{"name":"item#2", "value":1}
-			]
-		}
+  		{
+  			"key": "button",
+  			"name": "Some Button",
+  			"type": "button"
+  		},
 
-		{
-			"key": "switch",
-			"name": "Some Switcher",
-			"type": "switch",
-			"checked": true,
-			"unchecked": false
-		},
+  		{
+  			"key": "select",
+  			"name": "Some Select",
+  			"type": "select",
+  			"options": [
+  				{"name":"item#1", "value":0}
+  				{"name":"item#2", "value":1}
+  			]
+  		}
 
-		{
-			"key": "script",
-			"name": "Script",
-			"type": "script"
-		},
+  		{
+  			"key": "switch",
+  			"name": "Some Switcher",
+  			"type": "switch",
+  			"checked": true,
+  			"unchecked": false
+  		},
 
-		{
-			"key": "content",
-			"name": "Content",
-			"type": "saw"
-		},
+  		{
+  			"key": "script",
+  			"name": "Script",
+  			"type": "script"
+  		},
 
-	]
-
+  		{
+  			"key": "content",
+  			"name": "Content",
+  			"type": "saw"
+  		}
+      
+  	]
+  }
 }
 ```
 
