@@ -433,7 +433,9 @@ saltshaker(raw_salts, conditions[, limit, intersection, sort_by])
 
 `raw_salts`: **[ list ]** or **[ dict ]** original data.
 
-`conditions`: **[ list ]** condition options, the item of list could be **[ dict ]** data must match both key/value, **multiple key/value must use different dict**, or just use a key as **[ str ]**. etc., `[{'type':'test'},'thumbnail']` mean is has key 'type' and value is 'test', and has key 'thumbnail'.
+`conditions`: **[ list ]** condition options, the item of list could be **[ dict ]** data must match both key/value, **multiple key/value must use different dict**, or just use a key as **[ str ]**. etc., `[{'type':'test'},'thumbnail']` mean is has key 'type' and value is 'test', and has key 'thumbnail'. If you need find result is not equel the condition value, must add a `{"neq":True}` in the **[ dict ]**.
+
+
 
 `limit`: **[ int ]** limit of results.
 
