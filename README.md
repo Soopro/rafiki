@@ -5,6 +5,7 @@ version: 1.0.0
 1. [Theme Config](theme_config.md)
 2. [Jinja2 Template](jinja2_template.md)
 3. [Angular template](angular_template.md)
+3. [Markdown template](markdown_template.md)
 
 
 ## Things you need to learn
@@ -24,7 +25,8 @@ Before you read any document of this repo, you have to learn some definition:
 2. [Learn how to write theme config to define your theme.](theme_config.md)
 3. [Learn Jinja2 template to know how to write template language.](jinja2_template.md)
 4. [Learn Peon to know the develop tools.](https://github.com/Soopro/peon)
-5. [If you good engouh, learn Angular template to know how to write template able to use canvas editor language.](angular_template.md)
+5. [If you good engouh, learn Angular template to know how to write template able to use canvas editor view.](angular_template.md)
+5. [If you nothing other to do, learn markdown template to know how to write template able to use markdown editor view.](angular_template.md)
 
 ------------------------
 <br><br>

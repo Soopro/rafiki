@@ -2,7 +2,7 @@
 
 ## Concept
 
- It's use Angular template engine to make the Canvas Editor View. Almost all angular syntax is able to use in those template.
+It's use Angular template engine to make the Canvas Editor View. Almost all angular syntax is able to use in those template.
 
 All pages and Site metas and Theme meats is in context, just like jinja2 template context.
 
