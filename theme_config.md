@@ -184,7 +184,8 @@ mode `0`: use form view editor. need form structure in config [- ［default］
 
 mode `1`: use canvas editor. theme must contain `.tpl`
 
-mode `2`: use markdown editor. theme must contain `.mdl` [- ［experiment］
+mode `2`: use markdown editor. theme must contain `.tpl` 
+(same one with canvas view, system will automatically replace `saw` to a markdown render. if you already have .tpl, then you have nothing to do.)
 
 
 
