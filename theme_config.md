@@ -211,14 +211,14 @@ Supported form view editor. you need add to top level of theme config
 5. `gallery` - calling gallery modal
 6. `button` - calling button modal
 7. `script` - calling script modal
-8. `saw` - make SAW Editor for rich text only.
+8. `content` - make SAW/SAMd Editor for rich text. key will force to 'content'
 9. `select` - make a select filed with `options: name & value`
 10. `switch` - make a switch button with `checked & unchecked`
 
 
 
 **Notice:**
-`key` is used for *meta* *meta.title*, *meta.featured_img*, but *content* is only for 'content'.
+`key` is used for *meta* *meta.title*, *meta.featured_img*. If you set type as 'content' will force the key set to `content`.
 
 
 [ ***json*** ]
@@ -294,7 +294,7 @@ Supported form view editor. you need add to top level of theme config
   		{
   			"key": "content",
   			"name": "Content",
-  			"type": "saw"
+  			"type": "content"
   		}
       
   	]
