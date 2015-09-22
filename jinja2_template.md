@@ -210,9 +210,11 @@ Some context is no detail description, you have to print it by your self.
 
 * `pages`: **[ list ]** all published pages of this website.
 
-* `is_front`: **[ bool ]** if current page is front page.
+* `is_front`: **[ bool ]** if page is front page.
 
-* `is_404`: **[ bool ]** if current page is 404 page.
+* `is_404`: **[ bool ]** if page is 404 page.
+
+* `is_current`: **[ bool ]** if it is current page. (in `pages` list only.)
 
 * `tax` or `taxonomy`: **[ dict ]** return whole website's taxonomy system.
   it's very complex, try print and learn.
