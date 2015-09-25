@@ -625,6 +625,41 @@ sorted_pages = timemachine(pages, filed='date', precision='month',
 
 ---------------------------------
 
+### gutter
+
+gutter is a helper function can group pages by specific structure.
+
+**Output**
+
+**[ list ]** Return a list of grouped pages by structures.
+
+The output dict will follow:
+1. `alias`: **[ str ]** group alias.
+2. `title`: **[ str ]** group title.
+3. `meta`: **[ dict ]** group custom meta, usually is empty.
+4. `pages`: **[ dict ]** grouped pages.
+
+
+**Usage**
+
+```python
+gutter(raw_pages, structures)
+```
+
+`raw_pages`: **[ list ]** original list you want to group.
+
+`structures`: **[ list ]** contain `menu` like dict, the attribute can be custom by theme developer.
+```{"alias": "chapter-1", "title": "Chapter 1", "nodes": [...]}```
+
+
+***Example***
+
+```python
+bookpages = gutter(pages, menu['gutter'])
+```
+
+---------------------------------
+
 <br><br>
 
 ## Filters
