@@ -637,7 +637,7 @@ The output dict will follow:
 1. `alias`: **[ str ]** group alias.
 2. `title`: **[ str ]** group title.
 3. `meta`: **[ dict ]** group custom meta, usually is empty.
-4. `pages`: **[ dict ]** grouped pages.
+4. `pages`: **[ list ]** grouped pages. all element in this `pages` is same as single page.
 
 
 **Usage**
