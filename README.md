@@ -1,11 +1,10 @@
-version: 1.0.0
+version: 1.2.0
 
 # Theme Develop Documentation
 
 1. [Theme Config](theme_config.md)
 2. [Jinja2 Template](jinja2_template.md)
 3. [Angular template](angular_template.md)
-3. [Markdown template](markdown_template.md)
 
 
 ## Things you need to learn
