@@ -627,8 +627,7 @@ sorted_pages = timemachine(pages, filed='date', precision='month',
 
 ### gutter
 
-gutter is a helper function can find next/prev pages by specific structure.
-(for book app).
+gutter is a helper function can find next/prev/current pages by specific structure. (for book app).
 
 **Output**
 
@@ -640,7 +639,13 @@ The output dict will follow:
   * `title`: **[ str ]** page title.
   * `alias`: **[ str ]** page alias.
   * `url`: **[ str ]** page url.
+  
 * `next_page`: **[ dict ]** next page.
+  * `title`: **[ str ]** page title.
+  * `alias`: **[ str ]** page alias.
+  * `url`: **[ str ]** page url.
+  
+* `current_page`: **[ dict ]** current page.
   * `title`: **[ str ]** page title.
   * `alias`: **[ str ]** page alias.
   * `url`: **[ str ]** page url.
