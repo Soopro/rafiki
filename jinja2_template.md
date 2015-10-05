@@ -625,6 +625,34 @@ sorted_pages = timemachine(pages, filed='date', precision='month',
 
 ---------------------------------
 
+### straw
+
+straw is a helper function can directly find page by id.
+
+**Output**
+
+**[ dict ]** Return the page data.
+
+
+**Usage**
+
+```python
+straw(raw_pages, pid)
+```
+
+`raw_pages`: **[ list ]** original list you want to count.
+
+`pid`: **[ str/ObjectID ]** page id.
+
+
+***Example***
+
+```python
+next_page = straw(pages, next_page.id)
+```
+
+---------------------------------
+
 ### gutter
 
 gutter is a helper function can find next/prev pages by specific structure. (for book app).
@@ -649,12 +677,19 @@ The output dict will follow:
 **Usage**
 
 ```python
-gutter(page_meta, structures)
+gutter(pid, structures)
 ```
 
-`page_meta`: **[ dict ]** meta of the page you want find next and prev.
+`pid`: **[ str/ObjectID ]** current page id.
 
 `structures`: **[ list ]** contain `menu` like dict, the attribute can be custom by theme developer.
+
+
+***Example***
+
+```python
+page_gutter = gutter(meta.id, menu.gutter.nodes)
+```
 
 
 The old version `gutter` is deprecated. Looks don't need that heavy.
