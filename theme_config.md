@@ -69,7 +69,8 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	3. `excerpt_ellipsis` - **[ str ]** excerpt text ellipsis
 	4. `date_format` - **[ str ]** date string format
 	5. `perpage` - **[ int ]** entries of perpage use for create template
-	6. [ custom ] - options allow theme author to create custom options by self.
+  6. `markdown` - **[ bool ]** switcher of markdown mode in content
+	7. [ custom ] - options allow theme author to create custom options by self.
 
 
 
@@ -183,9 +184,6 @@ Theme able to define editor mode with config key `mode`
 mode `0`: use form view editor. need form structure in config [- ［default］
 
 mode `1`: use canvas editor. theme must contain `.tpl`
-
-mode `2`: use markdown editor. theme must contain `.tpl` 
-(same one with canvas view, system will automatically replace `saw` to a markdown render. if you already have .tpl, then you have nothing to do.)
 
 
 
