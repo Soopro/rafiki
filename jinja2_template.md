@@ -407,9 +407,13 @@ rope(raw_pages, sort_by[, desc, priority])
 
 `desc`: **[ bool ]** default is `True`. Final result is sort `DESC` or not.
 
-`priority`: **[ bool ]** default is `True`. Final result is effected by `priority` or not. priority will beyond every other sort keys.
+`priority`: **[ bool ]** default is `True`. Give `priority` as first sort key as default. priority will beyond every other sort keys. if you won't sort with priority at all, set it to False. *** The priority key be ASC as default ***
 
-`intersection`: **[ bool ]** default is `True`. if True, results must be matched all conditions, False is matched any condition.
+*tips*: If you want custom the sort `priority` key, so you can do this:
+```
+rope(pages, sort_by=["updated", "-priority"])
+```
+In this case the `priority` key must with `-`, because I want keep this 'priority' as ASC. if you want DESC just remove the `-`.
 
 
 ***Example***

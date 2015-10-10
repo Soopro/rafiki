@@ -297,7 +297,8 @@ Query contents and inject to `query` context.
 
 * `metas`: **[ dict ]** query metas. any meta in a content can be use.
 
-* `sortby`: **[ dict ]** sort query results by keys, if the key is start with '-', the key will sort `ASC`. if multiple key is given by list, different key can use `DESC` or `ASC` by start with '-' or not.
+* `sortby`: **[ list/str ]** sort query results by keys, if the key is start with '-', the key will sort `ASC`. if multiple key is given by list, different key can use `DESC` or `ASC` by start with '-' or not. 
+  *** The result will automatically sort by 'priority' first as ASC, if you want custom it, just add the 'priority' in this feild by your self.***
 
 * `length`: **[ int ]** how many entires in results.
 
