@@ -309,7 +309,7 @@ etc., `query.pages`.
 ```html
 <div sup-editor-content-query ng-model="query.pages"
   feilds="{'type':'post'}"
-  metas="{'category'">
+  metas="{'category': '*'}">
   <div ng-repeat="page in query.pages">
     <p>{{page.content}}</p>
   </div>
