@@ -283,8 +283,9 @@ Query contents and inject to `query` context.
 2. The key start with `-` will query content which don't have this key.
 3. The value start with `-` will exclude content which has the value.
 4. The value start with `+` or not operators will remove from exclude.
-5. The complex rules is execute by orders.
-6. Most time you don't have do that complex ...
+5. The value could be '*' if you want every thing with that key.
+6. The complex rules is execute by orders.
+7. Most time you don't have do that complex ...
 
 
 * `feilds`: **[ dict ]** query fields. such as:
