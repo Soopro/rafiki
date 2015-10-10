@@ -241,7 +241,7 @@ Use `site_meta` context in theme template.
 
 * `alias`: **[ str ]** site alias.
 
-* `logo`: **[ dict:media ]** logo media.
+* `logo`: **[ str ]** logo media src.
 
 * `copyright`: **[ str ]** for copyright.
 
