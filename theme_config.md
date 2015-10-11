@@ -53,10 +53,12 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 *	`menus`: **[ list ]** contain menu structure.
 	each menu is a **[ dict ]** `"alias": [ str:alias ], "title": [ str ]`
 
-*	`content_types`: **[ list ]** contain content types structure.
-	each content type is a **[ dict ]** `"alias": [ str:alias ], "title": [ str ]`
-	( alias start with '\_' will mark as hidden content type,
-	  hidden content type can not display with by url directly,
+*	`content_types`: **[ list ]** contain content types structure. single type is a **[ dict ]**.
+  1. `alias`: **[ str:alias ]** content type alias
+  2. `title`: **[ str ]** content type title
+  3. `status`: **[ int ]** content type display status, `0 hidden` `1 display`, if it's not given will be default as `1 display`.
+
+	( hidden content type can not display with by url directly,
 		but still can get form `pages` context. )
 
 *	`taxonomies`: **[ list ]** contain taxonomies structure.
