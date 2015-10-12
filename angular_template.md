@@ -29,8 +29,10 @@ template file extensions must be `.tpl` only. otherwise will never work.
 
 Angular syntax must use on html tags. Also remember the if
 
+*Remember it is different with jinja2, it's javascript. If you are not good enough to deal with it, please use Form view editor.*
+
 ***operators***
-*It is different with jinja2, It is javascript*
+
 * `||`: or
 * `&&`: and
 * `!`: opposite, etc., `if not menu.priamry`
@@ -41,6 +43,10 @@ etc., `if menu.priamry.indexOf(item)`
 * `!=`: not equals.
 * `()`: group conditions.
 etc., `if (title != None or desc is None) and advanced`
+
+***shortcodes***
+
+* [%theme_url%]: shortcode for theme\_url, work everwhere in tpl. if you really want to have a str, you can use html entities. `&#37;` to replace the %. ```[&#37;theme\_url&#37;]```
 
 ------------------------------------------
 
