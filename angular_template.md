@@ -274,6 +274,29 @@ Call gallery modal.
 
 ------------------------------------------
 
+### sup-editor-widget-collect
+
+Call collect modal.
+
+*tips:* collect will return a list with dict (`name/value`).
+
+* `ng-model`: **[ list:collect ]** the bind collect data.
+* `limit`: **[ int ]** the limit of the collection, must > 0.
+* `default`: **[ str ]** Its a str but must be specific format list. 
+  ```[{'name':'Key', 'value':'Value'}]``` 
+  otherwise will covert to empty list. 
+
+***Example***
+
+```html
+<div swapper sup-editor-widget-collect ng-model="meta.swapper"
+ default="[{'name':'0', 'value':'Swap Text'}]">
+   <b ng-repeat="item in meta.swapper">{{item.value}}</b>
+</div>
+```
+
+------------------------------------------
+
 ### sup-editor-content-query
 
 Query contents and inject to `query` context.
