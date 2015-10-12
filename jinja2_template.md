@@ -154,6 +154,13 @@ A list of media
 * `target`: target for media link. '\_blank' or something else.
 * `class`: media class.
 
+### list:collect
+
+A list of dict
+
+* `name`: item title. default is the index of item.
+* `value`: item value. default is the index of item.
+
 ### str:code
 
 A string might contain front-end codes. like js/html/css....

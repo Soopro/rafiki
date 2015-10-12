@@ -206,12 +206,13 @@ Supported form view editor. you need add to top level of theme config
 
 
 1. `input` - **[ str ]** short text input with `max: length`
-2. `textarea` - **[ str ]** slong text input with `max: length`
-3. `media` - **[ dict:media ]** scalling media modal
+2. `textarea` - **[ str ]** long text input with `max: length`
+3. `media` - **[ dict:media ]** calling media modal
 4. `bg` - **[ str ]** scalling background modal
-5. `gallery` - **[ list:media ]** scalling gallery modal
-6. `button` - **[ dict:button ]** scalling button modal
-7. `script` - **[ str ]** scalling script modal
+5. `gallery` - **[ list:media ]** calling gallery modal
+6. `button` - **[ dict:button ]** calling button modal
+6. `collect` - **[ list:collect ]** calling collect modal. `limit: int` limit items in the collect.
+7. `script` - **[ str ]** calling script modal
 8. `saw` - **[ str ]** make SAW/SAMd Editor for rich text. `key` will force to 'content'
 9. `select` - **[ str ]** smake a select filed with `options: name & value`
 10. `switch` - **[ int ]** or **[ int ]** smake a switch button with `checked & unchecked`
