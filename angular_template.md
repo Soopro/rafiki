@@ -367,6 +367,22 @@ Set new variable intro context `g` while in template. Usually for create default
 
 ------------------------------------------
 
+### sup-angular-wysiwyg
+
+Rich content editor for content.
+
+* `ng-model`: **[ str ]** rich content.
+* `default`: **[ str ]** default content for this field.
+
+***Example***
+
+```html
+<div sup-angular-wysiwyg ng-model="g.default_img_360x360"
+ default="Default Content..."><div>
+```
+
+------------------------------------------
+
 <br><br>
 
 
