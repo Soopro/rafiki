@@ -46,7 +46,7 @@ etc., `if (title != None or desc is None) and advanced`
 
 ***shortcodes***
 
-* [%theme_url%]: shortcode for theme\_url, work everwhere in tpl. if you really want to have a str, you can use html entities. `&#37;` to replace the %. ```[&#37;theme\_url&#37;]```
+* [%theme_url%]: shortcode for theme\_url, work everwhere in tpl. if you really want to have a str, you can use html entity. `&#37;` to replace the %. ```[&#37;theme\_url&#37;]```
 
 ------------------------------------------
 
