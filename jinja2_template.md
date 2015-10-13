@@ -126,46 +126,6 @@ Learn more form google please.
 
 <br><br>
 
-## Extended data type
-
-### dict:media
-
-* `src`: media src.
-* `title`: media title.
-* `link`: media link if have one.
-* `target`: target for media link. '\_blank' or something else.
-* `class`: media class.
-
-### list:gallery
-
-A list of media
-
-* `src`: media src.
-* `title`: media title.
-* `caption`: media caption.
-* `link`: media link if have one.
-* `target`: target for media link. '\_blank' or something else.
-* `class`: media class.
-
-### dict:button
-
-* `title`: button title.
-* `link`: button link if have one.
-* `target`: target for media link. '\_blank' or something else.
-* `class`: media class.
-
-### list:collect
-
-A list of dict
-
-* `name`: item title. default is the index of item.
-* `value`: item value. default is the index of item.
-
-### str:code
-
-A string might contain front-end codes. like js/html/css....
-
-<br><br>
 
 ## Base Context
 

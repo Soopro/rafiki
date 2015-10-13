@@ -234,7 +234,11 @@ Call background modal.
 
 Call script modal.
 
-* `ng-model`: **[ str:code ]** the bind script data.
+* `ng-model`: **[ dict:script ]** the bind script data.
+  * `code`: **[ str:code ]** you code will be here.
+  * `meta`: **[ dict ]** a meta for custom attributes (editor can not change it because there is not UI to modify, it's for future usage).
+  
+*tips:* You can preset some code inside the html tag as default, but the `<script>` tag is not allowed. The content inside tag will re-rendering after you change the data.
 
 ***Example***
 
