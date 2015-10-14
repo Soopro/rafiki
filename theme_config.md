@@ -74,7 +74,8 @@ Theme meta is load by this config file, after theme activated theme_meta.options
   6. `markdown` - **[ bool ]** switcher of markdown mode in content
 	7. [ custom ] - options allow theme author to create custom options by self.
 
-
+* `styles`: **[ str ]** custom theme styles, you might need put this in your templates with `<style>` tags. 
+  etc., ```<style>{{theme_meta.styles}}<style>```
 
 ##### Config sample
 
