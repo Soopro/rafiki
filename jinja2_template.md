@@ -141,10 +141,8 @@ Some context is no detail description, you have to print it by your self.
 
 * `lang`: **[ str ]** App language, language base code by locale. etc., 'en'
 
-* `translates`: **[ list ]** Multi language support.
-  Each translate is **[ dict ]**
+* `translates`: **[ list/None ]** Multi language support. if no translates data will return None. Each translate is **[ dict ]**
       `"code" : [ str ], "name": [ str ], "url": [ str ]`
-
   translates in defined in `site_meta`, but will removed when translate context is generated.
 
   *tips:* the translate source is a **[ dict ]**
