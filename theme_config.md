@@ -63,7 +63,8 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 *	`taxonomies`: **[ list ]** contain taxonomies structure.
 	each taxonomy is a **[ dict ]** `"alias": [ str:alias ], "title": [ str ], "content_types":[[ str ]]`
-	( content_types is a **[ list ]**, define content_types related to this taxonomy )
+	( content_types is a **[ list ]**, 
+    define content_types related to this taxonomy )
 
 * `options`: **[ dict ]** default theme options for `theme_meta.options`, those option could be change after activated.
 	1. `sortby` - **[ str ]** sort content by 'key', if the key start with `-` then sort result will be `ASC`, default is 'DESC'

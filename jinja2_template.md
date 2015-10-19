@@ -143,14 +143,46 @@ Some context is no detail description, you have to print it by your self.
 
 * `translates`: **[ list/None ]** Multi language support. if no translates data will return None. Each translate is **[ dict ]**
       `"code" : [ str ], "name": [ str ], "url": [ str ]`
-  translates in defined in `site_meta`, but will removed when translate context is generated.
+  translates in defined in `site_meta`, but will removed after translate context is generated.
 
-  *tips:* the translate source is a **[ dict ]**
+  *tips:* the translate source could be a **[ dict ]** or **[ list ]**
   ```json
   {
      "zh_CN":{"name":"汉语","url":"http://....."},
      "en_US":{"name":"English","url":"http://....."}
   }
+  ```
+  or 
+  ```json
+  [
+     {"code":"zh_CN", "name":"汉语", "url":"http://....."},
+     {"code":"en_US", "name":"English", "url":"http://....."}
+  ]
+  ```
+  
+
+* `socials`: **[ list/None ]** Multi social support. Each social is a **[ dict ]** .
+      ```
+      "type" : [ str ], "name": [ str ], "url": [ str ], 
+      "code": [ str:code ], "seo":[ str:code ]
+      ```
+  socials in defined in `site_meta`, but will removed after socials context is generated.
+
+  *tips:* the social source is a **[ dict ]**
+  ```json
+  {
+     "facebook":{"name":"Facebook","url":"http://....."},
+     "twitter":{"name":"Twitter","url":"http://....."}
+  }
+  ```
+  or 
+  ```json
+  [
+     {"type":"facebook", "name":"Fackbook", "url":"http://.....",
+      code:"...", seo:"..."},
+     {"type":"twitter", "name":"Twitter", "url":"http://.....", 
+      code:"...", seo:"..."}
+  ]
   ```
 
 * `sa`: **[ dict ]** built-in analytics. `sa.code` is js code.
@@ -596,28 +628,30 @@ sorted_pages = timemachine(pages, filed='date', precision='month',
 
 ### straw
 
-straw is a helper function can directly find page by id.
+straw is a helper function can directly find one dict item by key/value form a list.
 
 **Output**
 
-**[ dict ]** Return the page data.
+**[ dict ]** Return the item data.
 
 
 **Usage**
 
 ```python
-straw(raw_pages, pid)
+straw(raw_list, value[, key])
 ```
 
 `raw_pages`: **[ list ]** original list you want to count.
 
-`pid`: **[ str/ObjectID ]** page id.
+`value`: **[ any ]** the value must find match.
+
+`key`: **[ str ]** the key must find match. default is `id`.
 
 
 ***Example***
 
 ```python
-next_page = straw(pages, next_page.id)
+next_page = straw(pages, value = next_page.id, key = 'id')
 ```
 
 ---------------------------------
