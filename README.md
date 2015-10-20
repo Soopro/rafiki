@@ -109,6 +109,7 @@ Before you read any document of this repo, you have to learn some definition:
 * `src`: background media src.
 * `color`: background color.
 * `repeat`: background image repeat mode `no-repeat`(default), `repeat`, `repeat-x`, `repeat-y`.
+* `style`: generate style by `src`,`color`,`repeat` for template to use more easier.
 * `class`: background media class.
 
 ### list:gallery
