@@ -248,17 +248,7 @@ Use `site_meta` context in theme template.
 
 * `analytics`: **[ str ]** custom analysis code.
 
-* `social`: **[ str ]** custom social media code.
-
 * `seo`: **[ str ]** seo code.
-
-* `translates`: **[ dict ]** translates if you want to have.
-  ```json
-  {
-     "zh_CN":{"name":"汉语","url":"http://....."},
-     "en_US":{"name":"English","url":"http://....."}
-  }
-  ```
 
 * ... *Custom fields*
 
