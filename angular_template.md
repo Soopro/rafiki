@@ -217,7 +217,7 @@ bind it outside image. (bind it on <img> will kill the directive icons.)
 
 Call background modal.
 
-* `ng-model`: **[ dict:media ]** the bind media data.
+* `ng-model`: **[ dict:background ]** the bind media data.
 
 ***Example***
 

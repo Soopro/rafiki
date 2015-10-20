@@ -104,6 +104,13 @@ Before you read any document of this repo, you have to learn some definition:
 * `target`: target for media link. '\_blank' or something else.
 * `class`: media class.
 
+### dict:background
+
+* `src`: background media src.
+* `color`: background color.
+* `repeat`: background image is repeat or not.
+* `class`: background media class.
+
 ### list:gallery
 
 A list of media
