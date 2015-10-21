@@ -1,4 +1,4 @@
-version: 1.3.4
+version: 1.3.5
 
 # Theme Develop Documentation
 
@@ -147,3 +147,4 @@ A fixed dict.
 
 * `code`: **[ str:code ]** code...
 * `meta`: **[ dict ]** meta for custom attributes.
+* `status`: **[ int ]** display status `0:off` `1:on`

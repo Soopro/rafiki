@@ -133,48 +133,11 @@ there some in loop context can be useful:
 
 1. share with jinja i18n translate file. (po, mo)
 2. different way use in `.tpl` file (only):
-  * `{{_('The text need to be translate')}}` translate for angular expression. albe to work with other expressions, etc., `{{_('transtext') + 'Yes'}}
-  * `<div any-attr="_('The text need to be translate')" >` same with above, but for attrbuites.
-  * `{{_e('The text need to be translate')}}` excute translate directly, this is for some right text with mass html witch not able inject as `default` content. it dosen't support angluar expressions at all.
+  * `{{_('The text need to be translate')}}` translate text, support angular expression. albe to work with other expressions, etc., `{{_('transtext') + 'Yes'}}, if no expression the translated text will render into page directly.
+  * `<div any-attr="_('The text need to be translate')" >` same with above, but for attrbuites. while in attribute the text alway return with apos `'`. surround with `{{...}}` if you want render it directly.
   
 
 ------------------------------------------
-
-<br><br>
-
-
-## Extended data type
-
-### dict:media
-
-* `src`: media src.
-* `title`: media title.
-* `link`: media link if have one.
-* `target`: target for media link. '\_blank' or something else.
-* `class`: media class.
-
-### list:gallery
-
-A list of media
-
-* `src`: media src.
-* `title`: media title.
-* `caption`: media caption.
-* `link`: media link if have one.
-* `target`: target for media link. '\_blank' or something else.
-* `class`: media class.
-
-### dict:button
-
-* `title`: button title.
-* `link`: button link if have one.
-* `target`: target for media link. '\_blank' or something else.
-* `class`: media class.
-
-### str:code
-
-A string might contain front-end codes. like js/html/css....
-
 
 <br><br>
 
@@ -249,7 +212,7 @@ Call script modal.
 * `ng-model`: **[ dict:script ]** the bind script data.
   * `code`: **[ str:code ]** you code will be here.
   * `meta`: **[ dict ]** a meta for custom attributes (editor can not change it because there is not UI to modify, it's for future usage).
-  
+  * `status`: **[ int ]** display status `0:off` `1:on`
 *tips:* You can preset some code inside the html tag as default, but the `<script>` tag is not allowed. The content inside tag will re-rendering after you change the data.
 
 ***Example***
