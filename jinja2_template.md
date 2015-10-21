@@ -113,6 +113,8 @@ Use `filter:striptags` to strip tags from a str. usually for Website head metas.
 </head>
 ```
 
+------------------------------------------
+
 ### i18n support *(Advanced)*
 
 ***this is for advanced usege***

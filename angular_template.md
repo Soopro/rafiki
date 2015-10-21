@@ -127,6 +127,18 @@ there some in loop context can be useful:
 
 ------------------------------------------
 
+### i18n support *(Advanced)*
+
+***this is for advanced usege***
+
+1. share with jinja i18n translate file. (po, mo)
+2. different way use in `.tpl` file (only):
+  * `{{_('The text need to be translate')}}` translate for angular expression. albe to work with other expressions, etc., `{{_('transtext') + 'Yes'}}
+  * `<div any-attr="_('The text need to be translate')" >` same with above, but for attrbuites.
+  * `{{_e('The text need to be translate')}}` excute translate directly, this is for some right text with mass html witch not able inject as `default` content. it dosen't support angluar expressions at all.
+  
+
+------------------------------------------
 
 <br><br>
 
@@ -495,4 +507,3 @@ you have to use  `button.link | url` to make sure it is url.
 
 `remove_args`: **[ bool ]** default is `True`, remove arguments.
 
----------------------------------
