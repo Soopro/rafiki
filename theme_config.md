@@ -48,23 +48,24 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `textdomain`: **[ str ]** Translate file's textdomain, default is 'translate'
 
-* `hide_property`: **[ list ]** A list of hidden property alias, those filed will hidden from property panel. property alias must same as the key of meta. etc., taxonomy, tag, parent.
+* `hide_properties`: **[ list ]** A list of hidden property alias, those filed will hidden from property panel. property alias must same as the key of meta. etc., taxonomy, tag, parent.
 
-*	`menus`: **[ list ]** contain menu structure.
-	each menu is a **[ dict ]** `"alias": [ str:alias ], "title": [ str ]`
+*	`menus`: **[ dict ]** contain menu structure.
+	each menu is a **[ dict ]**, key is the menu `alias` **[ str:alias ]**.
+  1. `title`: **[ str ]**
 
-*	`content_types`: **[ list ]** contain content types structure. single type is a **[ dict ]**.
-  1. `alias`: **[ str:alias ]** content type alias
-  2. `title`: **[ str ]** content type title
-  3. `status`: **[ int ]** content type display status, `0 hidden` `1 display`, if it's not given will be default as `1 display`.
+*	`content_types`: **[ dict ]** contain content types structure. single type is a **[ dict ]** key will be the content type `alias` **[ str:alias ]**.
+  1. `title`: **[ str ]** content type title
+  2. `status`: **[ int ]** content type display status, `0 hidden` `1 display`, if it's not given will be default as `1 display`.
 
 	( hidden content type can not display with by url directly,
 		but still can get form `pages` context. )
 
-*	`taxonomies`: **[ list ]** contain taxonomies structure.
-	each taxonomy is a **[ dict ]** `"alias": [ str:alias ], "title": [ str ], "content_types":[[ str ]]`
-	( content_types is a **[ list ]**, 
-    define content_types related to this taxonomy )
+*	`taxonomies`: **[ dict ]** contain taxonomies structure.
+	each taxonomy is a **[ dict ]**, key will be the taxonomy `alias` **[ str:alias ]**.
+  1. `title": **[ str ]**
+  2. `content_types`: content_types is a **[ list ]** of **[ str:alias ]** , 
+    define content_types alias related to this taxonomy )
 
 * `options`: **[ dict ]** default theme options for `theme_meta.options`, those option could be change after activated.
 	1. `sortby` - **[ str ]** sort content by 'key', if the key start with `-` then sort result will be `ASC`, default is 'DESC'
