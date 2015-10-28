@@ -141,6 +141,8 @@ Some context is no detail description, you have to print it by your self.
 
 * `locale`: **[ str ]** App locale. etc., 'en_US'
 
+* `gfw`: **[ bool ]** App is behind gfw or not.
+
 * `lang`: **[ str ]** App language, language base code by locale. etc., 'en'
 
 * `translates`: **[ list/None ]** Multi language support. if no translates data will return None. Each translate is **[ dict ]**
