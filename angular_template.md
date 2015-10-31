@@ -4,9 +4,9 @@
 
 It's use Angular template engine to make the Canvas Editor View. Almost all angular syntax is able to use in those template.
 
-All pages and Site metas and Theme meats is in context, just like jinja2 template context.
+All context just like jinja2 template context, such as pages and Site metas and Theme meats.
 
-**`script` element is not allow in angular template. and `a` element will disable default behavior (unable link to anywhere.)  **
+**`script` tag is not allow in angular template. and `a` element will disable default behavior (unable link to anywhere.)  **
 
 You can only upload the whole theme to our system for preview.
 You can use our Develop tool `peon` to do it. (A secret key is required, which you can find from your security section of our system.)

@@ -138,6 +138,7 @@ Some context is no detail description, you have to print it by your self.
 
 
 * `app_id`: **[ str ]** App ID.
+* `owner`: **[ str ]** Owner alias.
 
 * `locale`: **[ str ]** App locale. etc., 'en_US'
 
@@ -187,7 +188,7 @@ Some context is no detail description, you have to print it by your self.
   ]
   ```
 
-* `sa`: **[ dict ]** built-in analytics. `sa.code` is js code.
+* `sa`: **[ dict ]** built-in analytics. `sa.app` for whole app, `sa.page` for a page (default is current).
 
 * `theme_url`: **[ str ]** Theme url. (without trailing slash)
 
