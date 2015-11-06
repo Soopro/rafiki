@@ -20,7 +20,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `title`: **[ str ]** Theme title.
 
-* `capability`: **[ list ]** Theme supported app types
+* `capabilities`: **[ list ]** Theme supported app types
 	1. `ws` - Website
 	2. `wx` - WeChat
 	3. `wa` - WebApp
@@ -92,7 +92,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	"textdomain":"translate",
 	"license": "MIT",
 	"title":"Soopro official theme",
-	"capability":["ws"],
+	"capabilities":["ws"],
 	"thumbnail":"soopro.png",
 	"previews":[
 		"previews_1.jpg",
