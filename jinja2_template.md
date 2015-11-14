@@ -146,8 +146,7 @@ Some context is no detail description, you have to print it by your self.
 
 * `lang`: **[ str ]** App language, language base code by locale. etc., 'en'
 
-* `translates`: **[ list/None ]** Multi language support. if no translates data will return None. Each translate is **[ dict ]**
-      `"code" : [ str ], "name": [ str ], "url": [ str ]`
+* `translates`: **[ list/None ]** Multi language support. if no translates data will return None. Each translate output is **[ dict ]**  `"key" : [ str ], "name": [ str ], "url": [ str ]`
   translates in defined in `site_meta`, but will removed after translate context is generated.
 
   *tips:* the translate source could be a **[ dict ]** or **[ list ]**
@@ -160,15 +159,15 @@ Some context is no detail description, you have to print it by your self.
   or 
   ```json
   [
-     {"code":"zh_CN", "name":"汉语", "url":"http://....."},
-     {"code":"en_US", "name":"English", "url":"http://....."}
+     {"key":"zh_CN", "name":"汉语", "url":"http://....."},
+     {"key":"en_US", "name":"English", "url":"http://....."}
   ]
   ```
   
 
 * `socials`: **[ list/None ]** Multi social support. Each social is a **[ dict ]** .
   ```
-  "type" : [ str ], "name": [ str ], "url": [ str ], "code": [ str:code ]
+  "key" : [ str ], "name": [ str ], "url": [ str ], "code": [ str:code ]
   ```
   socials in defined in `site_meta`, but will removed after socials context is generated.
 
@@ -183,8 +182,8 @@ Some context is no detail description, you have to print it by your self.
   or 
   ```json
   [
-     {"type":"facebook", "name":"Fackbook", "url":"http://.....", code:"..."},
-     {"type":"twitter", "name":"Twitter", "url":"http://.....", code:"..."}
+     {"key":"facebook", "name":"Fackbook", "url":"http://.....", code:"..."},
+     {"key":"twitter", "name":"Twitter", "url":"http://.....", code:"..."}
   ]
   ```
 
