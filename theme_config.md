@@ -217,7 +217,7 @@ Supported form view editor. you need add to top level of theme config
 6. `collect` - **[ list:collect ]** calling collect modal. `limit: int` limit items in the collect.
 7. `script` - **[ str ]** calling script modal
 8. `saw` - **[ str ]** make SAW/SAMd Editor for rich text. `key` will force to 'content'
-9. `select` - **[ str ]** smake a select filed with `options: name & value`
+9. `select` - **[ str ]** make a select filed with `options: name & value`, use `multiple: true` to define a multiple select.
 10. `switch` - **[ int ]** or **[ int ]** smake a switch button with `checked & unchecked`
 
 
@@ -276,6 +276,7 @@ Supported form view editor. you need add to top level of theme config
   			"key": "select",
   			"name": "Some Select",
   			"type": "select",
+  			"multiple": false,
   			"options": [
   				{"name":"item#1", "value":0}
   				{"name":"item#2", "value":1}

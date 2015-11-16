@@ -313,11 +313,11 @@ For `ws` website app only.
   * `terms`: **[ list ]** contain all terms in this taxonomy.
     1. `title`: **[ str ]** Title
     2. `priority`: **[ int ]** Priority of this term.
-    3. `meta`: **[ dict ]**
-       1. `parent`: **[ str ]** Parent term alias.
-       2. `description`: **[ str ]** Description.
-       3. `pic`: **[ str ]** Pic url, if you want add a picture for this term then copy and paste a absolute url here.
-       4. `class`: **[ str ]** css class.
+    3. `parent`: **[ str ]** Parent term alias.
+    4. `meta`: **[ dict ]**
+       1. `description`: **[ str ]** Description.
+       2. `pic`: **[ str ]** Pic url, if you want add a picture for this term then copy and paste a absolute url here.
+       3. `class`: **[ str ]** css class.
 
 ***Example***
 
