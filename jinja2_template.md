@@ -126,6 +126,22 @@ Learn more form google please.
 
 ------------------------------------------
 
+
+### Idea of Class in meta
+
+***this is for advanced usege***
+
+Sometime `object.meta.class`, sometime `object.class`.
+
+If the object is beyound **page** the class attribute will be `object.meta.class`. 
+if it's in a page or some kind node, will be `object.class`.
+
+Because the current page attributes will under `meta` context,
+you don't wont put it `meta.background.meta.class`...
+
+
+------------------------------------------
+
 <br><br>
 
 
