@@ -1,4 +1,4 @@
-version: 1.3.10
+version: 1.4.0
 
 # Theme Develop Documentation
 
@@ -136,6 +136,14 @@ A list of dict
 
 * `name`: item title. default is the index of item.
 * `value`: item value. default is the index of item.
+
+### list:notes
+
+A list of dict
+
+* `title`: item title. it's required.
+* `content`: item content.
+* ... may add more attributes future.
 
 ### str:code
 

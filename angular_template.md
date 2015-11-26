@@ -282,6 +282,29 @@ Call collect modal.
 
 ------------------------------------------
 
+### sup-editor-widget-notes
+
+Call notes modal.
+
+*tips:* cnotes will return a list with dict (`title/content`).
+
+* `ng-model`: **[ list:notes ]** the bind notes data.
+* `limit`: **[ int ]** the limit of the notes, must > 0.
+* `default`: **[ str ]** Its a str but must be specific format list. 
+  ```[{'title':'Title', 'Content':'.....'}]``` 
+  otherwise will covert to empty list. 
+
+***Example***
+
+```html
+<div swapper sup-editor-widget-collect ng-model="meta.swapper"
+ default="[{'name':'0', 'value':'Swap Text'}]">
+   <b ng-repeat="item in meta.swapper">{{item.value}}</b>
+</div>
+```
+
+------------------------------------------
+
 ### sup-editor-content-query
 
 Query contents and inject to `query` context.
@@ -397,6 +420,18 @@ Rich content editor for content.
 ## Filters
 
 There is may custom filters for template. Also support native angular filters, but you have learn by you self.
+
+------------------------------------------
+### trust
+**Output**
+
+**[ str ]** Return a str processed by $sce.trustAsHtml.
+
+**Usage**
+
+```html
+<div ng-bind-html="some.html | trust">
+```
 
 ------------------------------------------
 
