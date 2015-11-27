@@ -210,10 +210,10 @@ Supported form view editor. you need add to top level of theme config
 
 1. `input` - **[ str ]** short text input with `max: length`
 2. `textarea` - **[ str ]** long text input with `max: length`
-3. `media` - **[ dict:media ]** calling media modal
+3. `media` - **[ dict:media ]** calling media modal with `allow_types: list`
 4. `bg` - **[ str ]** scalling background modal
-5. `gallery` - **[ list:media ]** calling gallery modal
-6. `button` - **[ dict:button ]** calling button modal
+5. `gallery` - **[ list:media ]** calling gallery modal with `allow_types: list`
+6. `button` - **[ dict:button ]** calling button modal with `allow_types: list`
 6. `collect` - **[ list:collect ]** calling collect modal. `limit: int` limit items in the collect.
 7. `script` - **[ str ]** calling script modal
 8. `saw` - **[ str ]** make SAW/SAMd Editor for rich text. `key` will force to 'content'
@@ -251,19 +251,22 @@ Supported form view editor. you need add to top level of theme config
   		{
   			"key": "featured_img",
   			"name": "Featured Image",
-  			"type": "media"
+  			"type": "media",
+        "allow_types": "",
   		},
 
   		{
   			"key": "background",
   			"name": "Background",
-  			"type": "bg"
+  			"type": "bg",
+        "allow_types": "",
   		},
 
   		{
   			"key": "gallery",
   			"name": "Gallery",
-  			"type": "gallery"
+  			"type": "gallery",
+  			"allow_types": "",
   		},
 
   		{

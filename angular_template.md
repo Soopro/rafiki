@@ -175,13 +175,14 @@ bind it beside the text you want make it to editable.
 Call media modal.
 
 * `ng-model`: **[ dict:media ]** the bind data.
+* `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image'
 
 bind it outside image. (bind it on <img> will kill the directive icons.)
 
 ***Example***
 
 ```html
-<div sup-editor-media ng-model="meta.featured_img">
+<div sup-editor-media ng-model="meta.featured_img" allow-types="image, video">
   <img src="{{meta.featured_img.src}}" title="{{meta.featured_img.title}}"/>
 </div>
 ```
@@ -193,13 +194,15 @@ bind it outside image. (bind it on <img> will kill the directive icons.)
 Call background modal.
 
 * `ng-model`: **[ dict:background ]** the bind media data.
+* `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image'
 
 ***Example***
 
 ```html
 <div sup-editor-widget-bg ng-model="meta.background"
-  ng-style="{'background-image': meta.background.src}"
-  class="{{meta.background.class}}">
+ allow-types="image, video"
+ ng-style="{'background-image': meta.background.src}"
+ class="{{meta.background.class}}">
 </div>
 ```
 
@@ -245,11 +248,13 @@ Call gallery modal.
 *tips:* When you need display gallery as preview, you have to put first gallery item intro the gallery element.
 
 * `ng-model`: **[ list:gallery ]** the bind gallery data.
+* `allow-types`: **[ str ]** allow media types in gallery, separate with ','. ('image, video, audio') default is 'image'
 
 ***Example***
 
 ```html
-<div sup-editor-widget-gallery ng-model="meta.gallery">
+<div sup-editor-widget-gallery ng-model="meta.gallery"
+ allow-types="image, video">
   <figure> <!-- figure is not really necessary here -->
     <img src="{{meta.gallery[0].src}}" title="{{meta.gallery[0].title}}">
     <p>{{meta.gallery[0].caption}}</p>
