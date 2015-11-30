@@ -178,6 +178,8 @@ Call media modal.
 * `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image'
 
 bind it outside image. (bind it on <img> will kill the directive icons.)
+if `sup-editor-media='video'` or `sup-editor-media='audio'` this media modal will only suppported video or audio at once, also the icon on canvas will change.
+
 
 ***Example***
 
