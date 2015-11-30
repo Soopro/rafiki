@@ -305,8 +305,8 @@ Call notes modal.
 
 ```html
 <div swapper sup-editor-widget-collect ng-model="meta.swapper"
- default="[{'name':'0', 'value':'Swap Text'}]">
-   <b ng-repeat="item in meta.swapper">{{item.value}}</b>
+ default="[{'title':'0', 'Content':'Swap Text'}]">
+   <b ng-repeat="item in meta.swapper">{{item.Content}}</b>
 </div>
 ```
 
