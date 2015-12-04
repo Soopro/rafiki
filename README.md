@@ -1,4 +1,4 @@
-version: 1.5.0
+version: 1.5.1
 
 # Theme Develop Documentation
 
@@ -26,7 +26,7 @@ Before you read any document of this repo, you have to learn some definition:
 4. [Learn Peon to know the develop tools.](https://github.com/Soopro/peon)
 5. [If you good engouh, learn Angular template to know how to write template able to use canvas editor view.](angular_template.md)
 6. [If you nothing other to do, learn markdown template to know how to write template able to use markdown editor view.](angular_template.md)
-7. [Know more about components data model.](components.md)
+7. [Know more about widget data model.](widget_data_model.md)
 8. [Get gitignore file sample.](gitignore.md)
 
 ------------------------
