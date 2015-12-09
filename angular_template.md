@@ -415,7 +415,7 @@ Rich content editor for content.
 ***Example***
 
 ```html
-<div sup-angular-wysiwyg ng-model="g.default_img_360x360"
+<div sup-angular-wysiwyg ng-model="content"
  default="Default Content..."><div>
 ```
 
