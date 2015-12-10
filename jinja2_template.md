@@ -28,9 +28,9 @@ Template must write by Jinja2.
 ***operators***
 * `or`: or
 * `and`: and
-* `not`: opposite, etc., `if not menu.priamry`
+* `not`: opposite, etc., `if not menu.primary`
 * `in`: check item is in the list or key is in the dict,
-etc., `if item in menu.priamry`
+etc., `if item in menu.primary`
 * `is`: equals '==='.
 * `is not`: not equals '!=='.
 * `==`: equals, not much different with `is` while in template.

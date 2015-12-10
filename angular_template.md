@@ -35,9 +35,9 @@ Angular syntax must use on html tags. Also remember the if
 
 * `||`: or
 * `&&`: and
-* `!`: opposite, etc., `if not menu.priamry`
+* `!`: opposite, etc., `if not menu.primary`
 * `indexOf`: check item is in the list or key is in the dict,
-etc., `if menu.priamry.indexOf(item)`
+etc., `if menu.primary.indexOf(item)`
 * `===`: equals jinja2 `is`.
 * `==`: equals.
 * `!=`: not equals.
@@ -68,7 +68,7 @@ Use `ng-if` to rendering element by condition.
 
 ***Example***
 ```html
-<div ng-if="menu.priamry">
+<div ng-if="menu.primary">
 </div>
 ```
 
@@ -80,7 +80,7 @@ Use `ng-show` to display element by condition.
 
 ***Example***
 ```html
-<div ng-show="menu.priamry">
+<div ng-show="menu.primary">
 </div>
 ```
 
@@ -115,12 +115,12 @@ there some in loop context can be useful:
 
 ```html
 <!-- list -->
-<div ng-repeat="item in menu.priamry">
+<div ng-repeat="item in menu.primary">
 <h1> {{item.title}} </h1>
 </div>
 
 <!-- dict -->
-<div ng-repeat="(key, value) in menu.priamry">
+<div ng-repeat="(key, value) in menu.primary">
 <h1> {{key}}: {{value}} </h1>
 </div>
 ```
