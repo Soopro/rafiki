@@ -61,7 +61,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	( hidden content type can not display with by url directly,
 		but still can get form `pages` context. )
 
-*	`taxonomies`: **[ dict ]** contain taxonomies structure.
+*	`taxonomy`: **[ dict ]** contain taxonomies structure.
 	each taxonomy is a **[ dict ]**, key will be the taxonomy `alias` **[ str:alias ]**.
   1. `title": **[ str ]**
   2. `content_types`: content_types is a **[ list ]** of **[ str:alias ]** , 
@@ -125,13 +125,13 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 		{"alias":"_works", "title":"Works"}
 	],
 
-	"taxonomies":[
-    {
-      "alias":"category",
+	"taxonomy":{
+    "category": {
+      "alias":,
       "title":"Categories",
       "content_types":["post"]
     }
-  ],
+  },
 
 	"options":{
 		"sortby": "updated",
