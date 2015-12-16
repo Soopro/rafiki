@@ -162,10 +162,10 @@ bind it beside the text you want make it to editable.
 ```html
 <!-- your might have css display problem, then use `<div>` to wrap it. -->
 <h1>
-<div sup-editor-meta default="I am default text."></div>
+<div sup-editor-meta ng-model="meta.title" default="I am default text."></div>
 <h1>
 <!-- just like that -->
-<h2 sup-editor-meta default="I am default text."><h2>
+<h2 sup-editor-meta ng-model="meta.description" default="I am default text."><h2>
 ```
 
 ------------------------------------------
