@@ -152,10 +152,6 @@ You must use base context for url in template,
 such as `theme_url` `libs_url` `base_url` .
 Some context is no detail description, you have to print it by your self.
 
-
-* `app_id`: **[ str ]** App ID.
-* `owner`: **[ str ]** Owner alias.
-
 * `locale`: **[ str ]** App locale. etc., 'en_US'
 
 * `gfw`: **[ bool ]** App is behind gfw or not.
@@ -254,7 +250,9 @@ Use `site_meta` context in theme template.
 
 * `type`: **[ str ]** site type. Could be `ws` `wx` `wa` ...
 
-* `alias`: **[ str ]** site alias.
+* `alias`: **[ str ]** site app alias.
+
+* `id`: **[ str ]** site app id.
 
 * `logo`: **[ str ]** logo media src.
 
