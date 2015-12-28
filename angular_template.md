@@ -312,43 +312,64 @@ Call notes modal.
 
 ------------------------------------------
 
-### sup-editor-content-query
+### sup-query
 
 Query contents and inject to `query` context.
 
-`feilds` and `metas` must use key/value, and following a complex rules:
-1. The value can be **[ str ]** or **[ list ]**
-2. The key start with `-` will query content which don't have this key.
-3. The value start with `-` will exclude content which has the value.
-4. The value start with `+` or not operators will remove from exclude.
-5. The value could be '*' if you want every thing with that key.
-6. The complex rules is execute by orders.
-7. Most time you don't have do that complex ...
+`fields` and `metas` must use list or str, and following a complex rules:
+1. 'type' -> query anything have 'type' key.
+2. ['type', 'alias'] -> query anything have 'type' and 'alias' key.
+3. [{'type':'car'}] -> query 'type' is 'car'.
+4. [{'type':'car', not:true}] -> query 'type' is not 'car'.
+5. [{'type':''}] -> query any have 'type' key.
+6. [{'type':'', not:true}] -> query any don't have 'type' key.
+7. [{'type': null}] -> query any don't have 'type' key.
+8. [{'type': null, force:true}] -> query any 'type' is null.
+9. ['type', {alias:'test'}}] -> query have 'type' key and 'alias' is 'test'.
 
+* `fields`: **[ list ]** query fields (anything alse will skip). such as:
+  1. `content_type`: **[ str:alias ]** <- use `type` for short.
+  2. `alias`: **[ str:alias ]**
+  3. `updated`: **[ int ]**
+  4. `created`: **[ int ]**
+  5. `locked`: **[ bool ]**
+  6. `priority`: **[ int ]**
+  7. `parent`: **[ str:alias ]**
 
-* `feilds`: **[ dict ]** query fields. such as:
-  1. `content_types` <- use `type` for short.
-  2. `alias`
-  3. 'updated'
-  4. 'created'
-  5. `loccked`
+* `metas`: **[ dict ]** query metas. any meta in a content can be use. 
 
-* `metas`: **[ dict ]** query metas. any meta in a content can be use.
-
-* `sortby`: **[ list/str ]** sort query results by keys, if the key is start with '-', the key will sort `ASC`. if multiple key is given by list, different key can use `DESC` or `ASC` by start with '-' or not. 
+* `sortby`: **[ list/str ]** sort query results by keys, by default is sort by `ASC`, if the key is start with '-', the key will sort `DESC`. if multiple key is given by list, different key can use `DESC` or `ASC` by start with '-' or not. 
   *** The result will automatically sort by 'priority' first as ASC, if you want custom it, just add the 'priority' in this feild by your self.***
 
 * `length`: **[ int ]** how many entires in results.
 
-* `ng-model`: **[ list ]** must be keep results in inside `query`. otherwise maybe will pollute other context.
-etc., `query.pages`.
+* `desc`: **[ bool ]** want DESC the whole results, default is true.
+* `priority`: **[ bool ]** default sort by priority at first, default is true.
+
+
+* `ng-model`: **[ list ]** must be keep results in inside `query`. otherwise maybe will pollute other context. etc., `query.pages`.
+
+If `sortby`, `length` not given, will use the options in theme config or system default.
+
+You can also sup-query='post' for query content_type feild is 'post', please note this option will be replace if the `fields` attribute is given.
+
+If the `fields` or `metas` value with list, that mean is only need match one of list element. If you want match multiple value with same key, you have to use several dict to describe it. etc., [{category: 'car'}, {category:'bike'}].
+and I am not sure it will work fine, so good luck...
 
 ***Example***
 
 ```html
-<div sup-editor-content-query ng-model="query.pages"
-  fields="{'type':'post'}"
-  metas="{'category': '*'}">
+<div sup-query ng-model="query.works"
+  fields="[{'type':'works'}]"
+  metas="['featured_img', {'category':'car'}]"
+  length="12"
+  sortby="['date', 'updated']">
+  <div ng-repeat="page in query.pages">
+    <p>{{page.content}}</p>
+  </div>
+</div>
+
+<div sup-query='post' ng-model="query.posts">
   <div ng-repeat="page in query.pages">
     <p>{{page.content}}</p>
   </div>

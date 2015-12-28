@@ -440,10 +440,11 @@ saltshaker is a helper function can filter raw data intro a list by custom condi
 saltshaker(raw_salts, conditions[, limit, intersection, sort_by])
 ```
 
-`raw_salts`: **[ list ]** or **[ dict ]** original data.
+`raw_salts`: **[ list ]** or **[ dict ]** original data. At most time dict will be sucks.
 
-`conditions`: **[ list ]** condition options, the item of list could be **[ dict ]** data must match both key/value, **multiple key/value must use different dict**, or just use a key as **[ str ]**. etc., `[{'type':'test'},'thumbnail']` mean is has key 'type' and value is 'test', and has key 'thumbnail'. 
-If you need find result is opposited by the condition value, must add key  `"not":True`, for example `{"type":"test", "not":True}`.
+`conditions`: **[ list ]** condition options, the item of list could be **[ dict ]** data must match both key/value, **multiple key/value must use different dict**, or just use a key as **[ str ]**. etc., `[{'type':'test'},'thumbnail']` mean is has key 'type' and value is 'test', and has key 'thumbnail'. `{'type':''}` is match if have 'type' key.
+If you need find result is opposited by the condition value, must add key  `"not":True`, for example `{"type":"test", "not":True}`. also you can just `{"type":None}`
+If you really want match empty string `''`or `None`, use `{'type':None, force:True}`
 The condition value also supported **[ list ]**, the condition will be matched if any one of item is matched.
 ***Note*** if the target value is a list and condition gives not a list, in this case will test the condition value is in target value (list) or not to decide match result.
 
@@ -459,6 +460,15 @@ The condition value also supported **[ list ]**, the condition will be matched i
 result_pages = saltshaker(pages, [{'type':'test'}, 'thumbnail', {'category': ['news', 'war']},
                                   {'some_option':True, 'not':True}}], limit=12, intersection=True,
                                   sort_by='updated')
+```
+
+***Attention***: DO NOT sort or query those keys below, it might not working while in angular sup-query !!!
+```
+[
+    'date_formatted', 'excerpt', 'description',
+    'markdown', 'content', 
+    'id', 'app_id', 'attrs', 'url', 'status'
+]
 ```
 
 ---------------------------------
