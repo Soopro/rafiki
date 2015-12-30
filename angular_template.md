@@ -134,7 +134,7 @@ there some in loop context can be useful:
 1. share with jinja i18n translate file. (po, mo)
 2. different way use in `.tpl` file (only):
   * `{{_('The text need to be translate')}}` translate text, support angular expression. albe to work with other expressions, etc., `{{_('transtext') + 'Yes'}}`, if no expression the translated text will render into page directly.
-  * `<div any-attr="_('The text need to be translate')_" >` same with above, but for attrbuites. while in attribute the text alway return with apos `'`. surround with `{{...}}` if you want render it directly.
+  * `<div any-attr="_('The text need to be translate')" >` same with above, but for attrbuites. while in attribute the text alway return with apos `'`. surround with `{{...}}` if you want render it directly.
 
 
 ------------------------------------------
