@@ -133,9 +133,9 @@ there some in loop context can be useful:
 
 1. share with jinja i18n translate file. (po, mo)
 2. different way use in `.tpl` file (only):
-  * `{{_('The text need to be translate')}}` translate text, support angular expression. albe to work with other expressions, etc., `{{_('transtext') + 'Yes'}}, if no expression the translated text will render into page directly.
-  * `<div any-attr="_('The text need to be translate')" >` same with above, but for attrbuites. while in attribute the text alway return with apos `'`. surround with `{{...}}` if you want render it directly.
-  
+  * `{{_('The text need to be translate')}}` translate text, support angular expression. albe to work with other expressions, etc., `{{_('transtext') + 'Yes'}}`, if no expression the translated text will render into page directly.
+  * `<div any-attr="_('The text need to be translate')_" >` same with above, but for attrbuites. while in attribute the text alway return with apos `'`. surround with `{{...}}` if you want render it directly.
+
 
 ------------------------------------------
 
@@ -274,9 +274,9 @@ Call collect modal.
 
 * `ng-model`: **[ list:collect ]** the bind collect data.
 * `limit`: **[ int ]** the limit of the collection, must > 0.
-* `default`: **[ str ]** Its a str but must be specific format list. 
-  ```[{'name':'Key', 'value':'Value'}]``` 
-  otherwise will covert to empty list. 
+* `default`: **[ str ]** Its a str but must be specific format list.
+  ```[{'name':'Key', 'value':'Value'}]```
+  otherwise will covert to empty list.
 
 ***Example***
 
@@ -297,9 +297,9 @@ Call notes modal.
 
 * `ng-model`: **[ list:notes ]** the bind notes data.
 * `limit`: **[ int ]** the limit of the notes, must > 0.
-* `default`: **[ str ]** Its a str but must be specific format list. 
-  ```[{'title':'Title', 'Content':'.....'}]``` 
-  otherwise will covert to empty list. 
+* `default`: **[ str ]** Its a str but must be specific format list.
+  ```[{'title':'Title', 'Content':'.....'}]```
+  otherwise will covert to empty list.
 
 ***Example***
 
@@ -336,9 +336,9 @@ Query contents and inject to `query` context.
   6. `priority`: **[ int ]**
   7. `parent`: **[ str:alias ]**
 
-* `metas`: **[ dict ]** query metas. any meta in a content can be use. 
+* `metas`: **[ dict ]** query metas. any meta in a content can be use.
 
-* `sortby`: **[ list/str ]** sort query results by keys, by default is sort by `ASC`, if the key is start with '-', the key will sort `DESC`. if multiple key is given by list, different key can use `DESC` or `ASC` by start with '-' or not. 
+* `sortby`: **[ list/str ]** sort query results by keys, by default is sort by `ASC`, if the key is start with '-', the key will sort `DESC`. if multiple key is given by list, different key can use `DESC` or `ASC` by start with '-' or not.
   *** The result will automatically sort by 'priority' first as ASC, if you want custom it, just add the 'priority' in this feild by your self.***
 
 * `length`: **[ int ]** how many entires in results.
@@ -532,4 +532,3 @@ you have to use  `button.link | url` to make sure it is url.
 ```
 
 `remove_args`: **[ bool ]** default is `True`, remove arguments.
-
