@@ -1,4 +1,4 @@
-version: 1.6.0
+version: 1.6.1
 
 # Theme Develop Documentation
 
@@ -31,6 +31,9 @@ Before you read any document of this repo, you have to learn some definition:
 
 ------------------------
 <br><br>
+
+## Basic rules
+1. file name can be include charector [_-.0-9a-zA-z], otherwise will not working.
 
 ## Basic step of develop a theme
 
