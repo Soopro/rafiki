@@ -165,9 +165,20 @@ bind it beside the text you want make it to editable.
 <div sup-editor-meta ng-model="meta.title" default="I am default text."></div>
 <h1>
 <!-- just like that -->
-<h2 sup-editor-meta ng-model="meta.description" default="I am default text."><h2>
+<h2 sup-editor-meta ng-model="meta.description">Default Content<h2>
 ```
 
+***DO NOT***
+```html
+<!-- your might have css display problem, then use `<div>` to wrap it. -->
+<h1>
+  <div sup-editor-meta ng-model="meta.title">{{meta.title}}</div>
+<h1>
+```
+This will massup rendering while you type any spical character. like this:
+```
+&amp;nbsp;&amp;amp;nbsp;Contact &amp;amp;amp;nbsp;Us
+```
 ------------------------------------------
 
 ### sup-editor-media
