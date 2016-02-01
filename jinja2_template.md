@@ -439,8 +439,7 @@ saltshaker(raw_salts, conditions[, limit, intersection, sort_by])
 
 `raw_salts`: **[ list ]** or **[ dict ]** original data. At most time dict will be sucks.
 
-`conditions`: **[ list ]** condition options, the item of list could be **[ dict ]** data must match both key/value, **multiple key/value must use different dict**, or just use a key as **[ str ]**. etc., `[{'type':'test'},'thumbnail']` mean is has key 'type' and value is 'test', and has key 'thumbnail'. `{'type':''}` is match if have 'type' key.
-If you need find result is opposited by the condition value, must add key  `"not":True`, for example `{"type":"test", "not":True}`. also you can just `{"type":None}`
+`conditions`: **[ list ]** condition options, the item of list could be **[ dict ]** data must match both key/value, **multiple key/value must use different dict**, or just use a key as **[ str ]**. etc., `[{'type':'test'},'thumbnail']` mean is has key 'type' and value is 'test', and has key 'thumbnail'. `{'type':''}` or `{'type':true}` is match if have 'type' key. `{'type':false}` or `{"type":None}` is match if not have 'type' key. If you need find result is opposited by the condition value, must add key  `"not":True`, for example `{"type":"test", "not":True}`. 
 If you really want match empty string `''`or `None`, use `{'type':None, force:True}`
 The condition value also supported **[ list ]**, the condition will be matched if any one of item is matched.
 ***Note*** if the target value is a list and condition gives not a list, in this case will test the condition value is in target value (list) or not to decide match result.

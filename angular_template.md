@@ -332,9 +332,9 @@ Query contents and inject to `query` context.
 2. ['type', 'alias'] -> query anything have 'type' and 'alias' key.
 3. [{'type':'car'}] -> query 'type' is 'car'.
 4. [{'type':'car', not:true}] -> query 'type' is not 'car'.
-5. [{'type':''}] -> query any have 'type' key.
-6. [{'type':'', not:true}] -> query any don't have 'type' key.
-7. [{'type': null}] -> query any don't have 'type' key.
+5. [{'type':''}] or [{'type':true}] -> query any have 'type' key.
+8. [{'type': false}] or [{'type': null}] -> query any don't have 'type' key.
+7. [{'type':'', not:true}] -> query any don't have 'type' key.
 8. [{'type': null, force:true}] -> query any 'type' is null.
 9. ['type', {alias:'test'}}] -> query have 'type' key and 'alias' is 'test'.
 
