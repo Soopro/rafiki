@@ -155,7 +155,6 @@ Make a string meta content editable field.
 
 * `default`: **[ str ]** Default value for this field.
 
-bind it beside the text you want make it to editable.
 
 ***Example***
 
@@ -543,3 +542,28 @@ you have to use  `button.link | url` to make sure it is url.
 ```
 
 `remove_args`: **[ bool ]** default is `True`, remove arguments.
+
+------------------------------------------
+
+<br><br>
+
+
+## Advance tricks
+
+### Default content with context
+
+Only supported few context, such as:
+* `theme_url`
+* `base_url`
+* `libs_url`
+* translate functions `_()` and `_t()`.
+
+You can just type those context as default value for directives below:
+* `sup-editor-meta`
+* `sup-editor-widget-script`
+* `sup-angular-wysiwyg`
+
+Example:
+```
+<h2 sup-editor-meta ng-model="meta.description">Default {{_('Content')}}<h2>
+```
