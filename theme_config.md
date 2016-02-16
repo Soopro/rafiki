@@ -323,7 +323,9 @@ Supported form view editor. you need add to top level of theme config
 }
 ```
 
-key `name` is translate supported
+`name` is translate supported
+`allow_types`: is depaned on the widget, "*" for all as usual
+
 
 [ ***json*** ]
 
@@ -339,6 +341,7 @@ key `name` is translate supported
 }
 
 ```
+
 
 <br><br>
 
