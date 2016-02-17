@@ -179,11 +179,13 @@ Some context is no detail description, you have to print it by your self.
 
 * `socials`: **[ list/None ]** Multi social support. Each social is a **[ dict ]** .
 
-  1. `key`: [ str ]
-  2. `name`: [ str ]
-  3. `url`: [ str ]
-  4. `code`: [str]
-  5. `ico`: [str]
+  1. `key`: [ str ] key.
+  2. `name`: [ str ] name.
+  3. `url`: [ str ] target url.
+  4. `ico`: [ str ] social media icon image url, theme will use `key` for icon name as usual, if `ico` is given can be override it.
+  5. `image`: [ str ] image url of the social media, like QR code.
+  6. `code`: [ str ] for some script required by the social seo.
+  7. `headmeta`: [ str ] for metadata in html `<head>`
 
   socials in defined in `site_meta`, but will removed after socials context is generated.
 
@@ -191,15 +193,45 @@ Some context is no detail description, you have to print it by your self.
 
   ```json
   {
-     "facebook":{"name":"Facebook","url":"http://.....","code":"...","ico":"http://..."},
-     "twitter":{"name":"Twitter","url":"http://.....","code":"...","ico":"http://..."}
+     "facebook":{
+       "name":"Facebook",
+       "url":"http://...",
+       "code":"...",
+       "headmeta": "....",
+       "ico":"http://...",
+       "image": "http://..."
+     },
+     "twitter":{
+       "name":"Twitter",
+       "url":"http://...",
+       "code":"...",
+       "headmeta": "....",
+       "ico":"http://...",
+       "image": "http://..."
+     }
   }
   ```
   or 
   ```json
   [
-     {"key":"facebook","name":"Fackbook","url":"http://.....","code":"...","ico":"http://..."},
-     {"key":"twitter","name":"Twitter","url":"http://.....","code":"...","ico":"http://..."}
+     {
+       "key":"facebook",
+       "name":"Fackbook",
+       "url":"http://...",
+       "code":"...",
+       "headmeta": "....",
+       "ico":"http://...",
+       "image": "http://..."
+     },
+     {
+       "key":"twitter",
+       "name":"Twitter",
+       "url":"http://...",
+       "code":"...",
+       "headmeta": "....",
+       "ico":"http://...",
+       "image": "http://..."
+     }
   ]
   ```
 
