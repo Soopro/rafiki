@@ -182,7 +182,7 @@ Some context is no detail description, you have to print it by your self.
   1. `key`: [ str ] key.
   2. `name`: [ str ] name.
   3. `url`: [ str ] target url.
-  4. `ico`: [ str ] social media icon image url, theme will use `key` for icon name as usual, if `ico` is given can be override it.
+  4. `icon`: [ str ] social media icon image url, theme will use `key` for icon name as usual, if `icon` is given can be override it.
   5. `image`: [ str ] image url of the social media, like QR code.
   6. `code`: [ str ] for some script required by the social seo.
   7. `headmeta`: [ str ] for metadata in html `<head>`
@@ -198,7 +198,7 @@ Some context is no detail description, you have to print it by your self.
        "url":"http://...",
        "code":"...",
        "headmeta": "....",
-       "ico":"http://...",
+       "icon":"http://...",
        "image": "http://..."
      },
      "twitter":{
@@ -206,7 +206,7 @@ Some context is no detail description, you have to print it by your self.
        "url":"http://...",
        "code":"...",
        "headmeta": "....",
-       "ico":"http://...",
+       "icon":"http://...",
        "image": "http://..."
      }
   }
@@ -220,7 +220,7 @@ Some context is no detail description, you have to print it by your self.
        "url":"http://...",
        "code":"...",
        "headmeta": "....",
-       "ico":"http://...",
+       "icon":"http://...",
        "image": "http://..."
      },
      {
@@ -229,7 +229,7 @@ Some context is no detail description, you have to print it by your self.
        "url":"http://...",
        "code":"...",
        "headmeta": "....",
-       "ico":"http://...",
+       "icon":"http://...",
        "image": "http://..."
      }
   ]
