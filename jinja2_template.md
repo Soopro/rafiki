@@ -178,24 +178,28 @@ Some context is no detail description, you have to print it by your self.
   
 
 * `socials`: **[ list/None ]** Multi social support. Each social is a **[ dict ]** .
-  ```
-  "key" : [ str ], "name": [ str ], "url": [ str ], "code": [ str:code ]
-  ```
+
+  1. `key`: [ str ]
+  2. `name`: [ str ]
+  3. `url`: [ str ]
+  4. `code`: [str]
+  5. `ico`: [str]
+
   socials in defined in `site_meta`, but will removed after socials context is generated.
 
   *tips:* the social source is a **[ dict ]**
 
   ```json
   {
-     "facebook":{"name":"Facebook","url":"http://....."},
-     "twitter":{"name":"Twitter","url":"http://....."}
+     "facebook":{"name":"Facebook","url":"http://.....","code":"...","ico":"http://..."},
+     "twitter":{"name":"Twitter","url":"http://.....","code":"...","ico":"http://..."}
   }
   ```
   or 
   ```json
   [
-     {"key":"facebook", "name":"Fackbook", "url":"http://.....", code:"..."},
-     {"key":"twitter", "name":"Twitter", "url":"http://.....", code:"..."}
+     {"key":"facebook","name":"Fackbook","url":"http://.....","code":"...","ico":"http://..."},
+     {"key":"twitter","name":"Twitter","url":"http://.....","code":"...","ico":"http://..."}
   ]
   ```
 
