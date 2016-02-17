@@ -298,6 +298,10 @@ Use `site_meta` context in theme template.
 
 * `seo`: **[ str ]** seo code.
 
+* `bg`: **[ dict:background ]** site level background.
+
+* `banner`: **[ dict:background ]** site level banner.
+
 * ... *Custom fields*
 
 
