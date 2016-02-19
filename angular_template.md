@@ -423,15 +423,19 @@ such as `libs.soopro.com`
 
 ### sup-set
 
-Set new variable intro context `g` while in template. Usually for create default context need to be reuse. must be keep results in inside `query`. otherwise maybe will pollute other context.
+Set new variable intro context `g` while in template. Usually for create default context need to be reuse. 
 
 * `ng-model`: **[ any ]** data you want create.
+* `value`: **[ any ]** for gestalt data, like `str`, `number`, `bool` ...
+* `object`: **[ dict ]** or **[ list ]** for object data
 
 ***Example***
 
 ```html
 <sup-set ng-model="g.default_img_360x360"
          value="{{theme_url+'/styles/default_img_360x360.png'}}"></sup-set>
+<sup-set ng-model="g.opts"
+         value="{{theme_meta.options}}"></sup-set>
 ```
 
 ------------------------------------------
