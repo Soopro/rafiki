@@ -3,11 +3,20 @@
 
 ## dict:media
 
+* `type`: media type 'image','video','audio','application'.
+* `mimetype`: media mimetype.
 * `src`: media src.
 * `title`: media title.
 * `link`: media link if have one.
 * `target`: target for media link. '\_blank' or something else.
 * `class`: media class.
+
+Additional attributes for 'video' and 'audio':
+
+* `controls`: media has controls.
+* `loop`: media will loop.
+* `autoplay`: media will loop.
+* `poster`: media poster.
 
 ## dict:background
 
@@ -16,6 +25,12 @@
 * `repeat`: background image repeat mode `no-repeat`(default), `repeat`, `repeat-x`, `repeat-y`.
 * `style`: generate style by `src`,`color`,`repeat` for template to use more easier.
 * `class`: background media class.
+
+Additional attributes for 'video' and 'audio':
+
+* `controls`: media has controls, always `false`.
+* `loop`: media will loop, always `true`.
+* `autoplay`: media will loop, always `true`.
 
 ## list:gallery
 
@@ -27,6 +42,13 @@ A list of media
 * `link`: media link if have one.
 * `target`: target for media link. '\_blank' or something else.
 * `class`: media class.
+
+Additional attributes for 'video' and 'audio':
+
+* `controls`: media has controls.
+* `loop`: media will loop.
+* `autoplay`: media will loop.
+* `poster`: media poster.
 
 ## dict:button
 

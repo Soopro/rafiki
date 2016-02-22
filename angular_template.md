@@ -185,7 +185,7 @@ This will massup rendering while you type any spical character. like this:
 Call media modal.
 
 * `ng-model`: **[ dict:media ]** the bind data.
-* `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image'
+* `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
 
 bind it outside image. (bind it on <img> will kill the directive icons.)
 if `sup-editor-media='video'` or `sup-editor-media='audio'` this media modal will only suppported video or audio at once, also the icon on canvas will change.
@@ -206,7 +206,7 @@ if `sup-editor-media='video'` or `sup-editor-media='audio'` this media modal wil
 Call background modal.
 
 * `ng-model`: **[ dict:background ]** the bind media data.
-* `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image'
+* `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
 
 ***Example***
 
@@ -260,7 +260,7 @@ Call gallery modal.
 *tips:* When you need display gallery as preview, you have to put first gallery item intro the gallery element.
 
 * `ng-model`: **[ list:gallery ]** the bind gallery data.
-* `allow-types`: **[ str ]** allow media types in gallery, separate with ','. ('image, video, audio') default is 'image'
+* `allow-types`: **[ str ]** allow media types in gallery, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
 
 ***Example***
 
