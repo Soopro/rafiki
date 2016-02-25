@@ -121,9 +121,9 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 	"mode": 1,
 
-	"menus":[
-		{"alias":"secondary", "title":"Secondary Menu"}
-	],
+	"menus":{
+    "secondary":{"title":"Secondary Menu"}
+  },
 
   "content_types":{
     "works": {"title": "Themes", "status": 0}
