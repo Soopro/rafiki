@@ -847,6 +847,9 @@ you have to use  `button.link | url` to make sure it is url.
 <a href="{{button.link | url}}">Button</a>
 ```
 
+`remove_args`: **[ bool ]** default is `False`, remove arguments.
+`remove_hash`: **[ bool ]** default is `False`, remove hash.
+
 ---------------------------------
 
 ### path
@@ -863,5 +866,21 @@ you have to use  `button.link | url` to make sure it is url.
 ```
 
 `remove_args`: **[ bool ]** default is `True`, remove arguments.
+`remove_hash`: **[ bool ]** default is `True`, remove hash.
 
 ---------------------------------
+
+### tostring
+
+**Output**
+
+**[ str ]** Return a str, if input is a function or none or unable to string will return ''.
+
+**Usage**
+
+```html
+<h2> Current page path is: {{meta.title|tostring}}"></h2>
+```
+
+---------------------------------
+
