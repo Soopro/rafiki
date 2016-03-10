@@ -156,6 +156,11 @@ Some context is no detail description, you have to print it by your self.
 
 * `gfw`: **[ bool ]** App is behind gfw or not.
 
+* `request`: **[ dict ]** request.
+  1. `remote_addr`: **[ str ]** request remote addr, aka client ip.
+  2. `path`: **[ str ]** request path, starts with '/'.
+  3. `url`: **[ str ]** request url, same with base_url most time.
+  4. `args`: **[ dict ]** request args, multipe args with same key might return as a list.
 * `lang`: **[ str ]** App language, language base code by locale. etc., 'en'
 
 * `translates`: **[ list/None ]** Multi language support. if no translates data will return None. Each translate output is **[ dict ]**  `"key" : [ str ], "name": [ str ], "url": [ str ]`
