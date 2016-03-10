@@ -152,6 +152,8 @@ You must use base context for url in template,
 such as `theme_url` `libs_url` `base_url` .
 Some context is no detail description, you have to print it by your self.
 
+* `app_id`: **[ str ]** site app id.
+
 * `locale`: **[ str ]** App locale. etc., 'en_US'
 
 * `gfw`: **[ bool ]** App is behind gfw or not.
