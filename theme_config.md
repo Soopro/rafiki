@@ -65,6 +65,8 @@ Theme meta is load by this config file, after theme activated theme_meta.options
   1. `content_type`: **[ str ]** reserved content's content type, default is `page`.
   2. `template`: **[ dict ]** reserved content's meta, default is the key.
 
+* `allowed_slots`: **[ list ]** contain allowed extesion aliases. If current activated installable extension's `alias` is not in `allowed_slots`, the extension will display not "Not Supported" on admin panel.
+
 *	`taxonomy`: **[ dict ]** contain taxonomies structure.
 	each taxonomy is a **[ dict ]**, key will be the taxonomy `alias` **[ str:alias ]**.
   1. `title": **[ str ]**
@@ -136,6 +138,8 @@ Theme meta is load by this config file, after theme activated theme_meta.options
       "meta": {"template": "test"}
     }
   },
+  
+  "allowed_slots": ["comment"],
   
   "taxonomy":{
     "category": {

@@ -1,10 +1,12 @@
-version: 1.7.3
+version: 1.8.0
 
 # Theme Develop Documentation
 
 1. [Theme Config](theme_config.md)
-2. [Jinja2 Template](jinja2_template.md)
-3. [Angular template](angular_template.md)
+2. [Theme Preset](theme_preset.md)
+3. [Jinja2 Template](jinja2_template.md)
+4. [Angular template](angular_template.md)
+5. [Widget Data Models](widget_data_models.md)
 
 
 ## Things you need to learn

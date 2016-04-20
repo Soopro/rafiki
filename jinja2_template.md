@@ -269,6 +269,8 @@ Some context is no detail description, you have to print it by your self.
 
 * `menu`: **[ dict ]** return whole website's menu system.
 
+* `slots`: **[ dict ]** Installed Extension slots, the item key will be the extension alias, the value will be the scripts.
+
 ------------------------------------
 
 ### Site Meta
@@ -427,7 +429,30 @@ get menu items by menu[menu_alias]
 {% endfor %}
 ```
 
+------------------------------------
+
+### Slots
+
+
+Slots is hosted installed extensions which has plugin script insert to template. Theme develop can use them to supported extensions.
+
+* [ ext_alias ]: **[ str ]** the key will be ext alias, the value will be the scripts need to inject to page.
+
+***Example***
+
+```html
+{% if slots.comment %}
+  {{slots.comment}}
+{% endif %}
+```
+
+*tips:* Don't for get add supported extension alias intro `allowed_slots` from theme config.
+
+
+
+
 <br><br>
+
 
 
 ### Helpers
