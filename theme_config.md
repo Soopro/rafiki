@@ -31,10 +31,11 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	2. `1` - Canvas view
 	3. `2` - Markdown view
 
+* `poster`: **[ str ]** Relative path of thumbnail image. recommend `poster.png`.
 
-* `thumbnail`: **[ str ]** Relative path of thumbnail image. recommend `.png`.
+* `thumbnail`: **[ str ]** Relative path of thumbnail image. recommend `thumbnail.png`.
 
-* `previews`: **[ list ]** A list of relative path of preview, recommend `.png`.
+* `previews`: **[ list ]** A list of relative path of preview.
 
 * `description`: **[ str ]** Theme description.
 
