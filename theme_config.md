@@ -64,7 +64,8 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `reserved_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. the key will be the content `alias` **[ str:alias ]**.
   1. `content_type`: **[ str ]** reserved content's content type, default is `page`.
-  2. `template`: **[ dict ]** reserved content's meta, default is the key.
+  2. `template`: **[ str ]** reserved content's meta, default is the key.
+  3. `meta`: **[ dict ]** optional for inject content metas, etc., `title`.
 
 * `allowed_slots`: **[ list ]** contain allowed extesion aliases. If current activated installable extension's `alias` is not in `allowed_slots`, the extension will display not "Not Supported" on admin panel.
 
@@ -136,7 +137,10 @@ Theme meta is load by this config file, after theme activated theme_meta.options
     "xxx": {},
     "test": {
       "content_type": page,
-      "meta": {"template": "test"}
+      "template": "test",
+      "meta": {
+        "title": "Test"
+      }
     }
   },
   
