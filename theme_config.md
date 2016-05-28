@@ -62,7 +62,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	( hidden content type can not display with by url directly,
 		but still can get form `pages` context. )
 
-* `reserve_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. the key will be the content `alias` **[ str:alias ]**.
+* `reserved_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. the key will be the content `alias` **[ str:alias ]**.
   1. `content_type`: **[ str ]** reserved content's content type, default is `page`.
   2. `template`: **[ dict ]** reserved content's meta, default is the key.
 
@@ -132,7 +132,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
     "works": {"title": "Themes", "status": 0}
   },
   
-  "reserve_contents":{
+  "reserved_contents":{
     "xxx": {},
     "test": {
       "content_type": page,
