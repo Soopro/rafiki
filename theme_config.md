@@ -26,10 +26,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	3. `wa` - WebApp
 
 
-* `mode` : **[ int ]** Flag of mode, default is 0
-	1. `0` - Form view
-	2. `1` - Canvas view
-	3. `2` - Markdown view
+* `form_mode` : **[ int ]** open form editor or not
 
 * `poster`: **[ str ]** Relative path of thumbnail image. recommend `poster.png`.
 
@@ -123,7 +120,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 	"hide_property": ["taxonomy", "tag", "parent"],
 
-	"mode": 1,
+	"form_mode": false,
 
 	"menus":{
     "secondary":{"title":"Secondary Menu"}
@@ -203,13 +200,9 @@ key `title` `description` `template:title` is translate supported
 
 <br><br>
 
-## Editor mode
+## Editor form mode
 
-Theme able to define editor mode with config key `mode`
-
-mode `0`: use form view editor. need form structure in config [- ［default］
-
-mode `1`: use canvas editor. theme must contain `.tpl`
+Theme able to define editor mode with config key `form_mode` with true.
 
 
 
