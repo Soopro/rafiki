@@ -66,7 +66,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `allowed_slots`: **[ list ]** contain allowed extesion aliases. If current activated installable extension's `alias` is not in `allowed_slots`, the extension will display not "Not Supported" on admin panel.
 
-*	`taxonomy`: **[ dict ]** contain taxonomies structure.
+*	`taxonomies`: **[ dict ]** contain taxonomies structure.
 	each taxonomy is a **[ dict ]**, key will be the taxonomy `alias` **[ str:alias ]**.
   1. `title": **[ str ]**
   2. `content_types`: content_types is a **[ list ]** of **[ str:alias ]** , 
@@ -143,7 +143,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
   
   "allowed_slots": ["comment"],
   
-  "taxonomy":{
+  "taxonomies":{
     "category": {
       "alias":,
       "title":"Categories",
