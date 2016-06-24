@@ -903,17 +903,19 @@ you have to use  `button.link | url` to make sure it is url.
 
 ---------------------------------
 
-### tostring
+### args
 
 **Output**
 
-**[ str ]** Return a str, if input is a function or none or unable to string will return ''.
+**[ dict/tuple ]** Return args from a url as a dict or tuple. default is {}
 
 **Usage**
 
 ```html
-<h2> Current page path is: {{meta.title|tostring}}"></h2>
+<h2> Current page args is: {{request.url|args([unqiue=True])}}"></h2>
 ```
+
+`unique`: **[ bool ]** return as a dict. default is True.
 
 ---------------------------------
 
