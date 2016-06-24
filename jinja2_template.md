@@ -907,7 +907,7 @@ you have to use  `button.link | url` to make sure it is url.
 
 **Output**
 
-**[ dict/tuple ]** Return args from a url as a dict or tuple. default is {}
+**[ dict/list ]** Return args from a url as a dict or a list of tuple. default is {}
 
 **Usage**
 
