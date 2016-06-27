@@ -549,6 +549,22 @@ you have to use  `button.link | url` to make sure it is url.
 
 ------------------------------------------
 
+### args
+
+**Output**
+
+**[ dict ]** Return args from a url as a dict. default is {}
+
+**Usage**
+
+```html
+<h2> Current page args is: {{request.url|args([unqiue])}}"></h2>
+```
+
+`unique`: **[ bool ]** return as a unquie value, otherwise might get a list if there multiple args with same key. default is `True`.
+
+------------------------------------------
+
 <br><br>
 
 

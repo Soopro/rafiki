@@ -156,8 +156,6 @@ Some context is no detail description, you have to print it by your self.
 
 * `locale`: **[ str ]** App locale. etc., 'en_US'
 
-* `gfw`: **[ bool ]** App is behind gfw or not.
-
 * `request`: **[ dict ]** request.
   1. `remote_addr`: **[ str ]** request remote addr, aka client ip.
   2. `path`: **[ str ]** request path, starts with '/'.
@@ -165,7 +163,7 @@ Some context is no detail description, you have to print it by your self.
   4. `args`: **[ dict ]** request args, multipe args with same key might return as a list.
 * `lang`: **[ str ]** App language, language base code by locale. etc., 'en'
 
-* `translates`: **[ list/None ]** Multi language support. if no translates data will return None. Each translate output is **[ dict ]**  `"key" : [ str ], "name": [ str ], "url": [ str ]`
+* `translates`: **[ list ]** Multi language support. if no translates data will return None. Each translate output is **[ dict ]**  `"key" : [ str ], "name": [ str ], "url": [ str ]`
   translates in defined in `site_meta`, but will removed after translate context is generated.
 
   *tips:* the translate source could be a **[ dict ]** or **[ list ]**
@@ -184,7 +182,7 @@ Some context is no detail description, you have to print it by your self.
   ```
   
 
-* `socials`: **[ list/None ]** Multi social support. Each social is a **[ dict ]** .
+* `socials`: **[ list ]** Multi social support. Each social is a **[ dict ]** .
 
   1. `key`: [ str ] key.
   2. `name`: [ str ] name.
@@ -264,12 +262,12 @@ Some context is no detail description, you have to print it by your self.
 
 * `pages`: **[ list ]** all published pages of this website.
 
-* `tax` or `taxonomy`: **[ dict ]** return whole website's taxonomy system.
+* `taxonomy`: **[ dict ]** return whole website's taxonomy system.
   it's very complex, try print and learn.
 
 * `menu`: **[ dict ]** return whole website's menu system.
 
-* `slots`: **[ dict ]** Installed Extension slots, the item key will be the extension alias, the value will be the scripts.
+* `slot`: **[ dict ]** Installed Extension slots, the item key will be the extension alias, the value will be the scripts.
 
 ------------------------------------
 
@@ -431,24 +429,22 @@ get menu items by menu[menu_alias]
 
 ------------------------------------
 
-### Slots
+### Slot
 
 
-Slots is hosted installed extensions which has plugin script insert to template. Theme develop can use them to supported extensions.
+Slot is hosted installed extensions which has plugin script insert to template. Theme develop can use them to supported extensions.
 
 * [ ext_alias ]: **[ str ]** the key will be ext alias, the value will be the scripts need to inject to page.
 
 ***Example***
 
 ```html
-{% if slots.comment %}
-  {{slots.comment}}
+{% if slot.comment %}
+  {{slot.comment}}
 {% endif %}
 ```
 
 *tips:* Don't for get add supported extension alias intro `allowed_slots` from theme config.
-
-
 
 
 <br><br>
@@ -907,7 +903,7 @@ you have to use  `button.link | url` to make sure it is url.
 
 **Output**
 
-**[ dict/list ]** Return args from a url as a dict or a list of tuple. default is {}
+**[ dict ]** Return args from a url as a dict. default is {}
 
 **Usage**
 
@@ -915,7 +911,7 @@ you have to use  `button.link | url` to make sure it is url.
 <h2> Current page args is: {{request.url|args([unqiue=True])}}"></h2>
 ```
 
-`unique`: **[ bool ]** return as a dict. default is True.
+`unique`: **[ bool ]** return as a unquie value, otherwise might get a list if there multiple args with same key. default is `True`.
 
 ---------------------------------
 
