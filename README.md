@@ -13,7 +13,7 @@ version: 1.8.5
 
 Before you read any document of this repo, you have to learn some definition:
 
-* `alias`: This is a human readable key string. `alias` must be **unique** in same level, just like a filename in same folder, or a path of url. Developer can use alias definition key like string in template. For example: you have to make a photo slider with dynamic contents, you need a key to define #id of each slides, this is good situation to use content's alias to make those keys.
+* `slug`: This is a human readable key string. `slug` must be **unique** in same level, just like a filename in same folder, or a path of url. Developer can use slug definition key like string in template. For example: you have to make a photo slider with dynamic contents, you need a key to define #id of each slides, this is good situation to use content's slug to make those keys.
 
 * `content_type`: Content type define types of different content source. one content can not archive in different content type, just like `folder` with `file`. It's totally different with Category (assume you understand what is category).
 

@@ -40,7 +40,7 @@ ext发动后端请求时需要带有以下参数:
 
 *** 注意：app_key app_secret 都是对应ext的外部应用，而这里关联的 app_id 就是 ext_id ***
 
-sup的后端会校验code 中的open id 是否有效，并且判断 ext alias 是否存在于 open_id 所对应的app的extensions 列表中。  
+sup的后端会校验code 中的open id 是否有效，并且判断 ext slug 是否存在于 open_id 所对应的app的extensions 列表中。  
 通过就返回token。  
 
 ===========================

@@ -328,23 +328,23 @@ Query contents and inject to `query` context.
 
 `fields` and `metas` must use list or str, and following a complex rules:
 1. 'type' -> query anything have 'type' key.
-2. ['type', 'alias'] -> query anything have 'type' and 'alias' key.
+2. ['type', 'slug'] -> query anything have 'type' and 'slug' key.
 3. [{'type':'car'}] -> query 'type' is 'car'.
 4. [{'type':'car', not:true}] -> query 'type' is not 'car'.
 5. [{'type':''}] or [{'type':true}] -> query any have 'type' key.
 8. [{'type': false}] or [{'type': null}] -> query any don't have 'type' key.
 7. [{'type':'', not:true}] -> query any don't have 'type' key.
 8. [{'type': null, force:true}] -> query any 'type' is null.
-9. ['type', {alias:'test'}}] -> query have 'type' key and 'alias' is 'test'.
+9. ['type', {slug:'test'}}] -> query have 'type' key and 'slug' is 'test'.
 
 * `fields`: **[ list ]** query fields (anything alse will skip). such as:
-  1. `content_type`: **[ str:alias ]** <- use `type` for short.
-  2. `alias`: **[ str:alias ]**
+  1. `content_type`: **[ str:slug ]** <- use `type` for short.
+  2. `slug`: **[ str:slug ]**
   3. `updated`: **[ int ]**
   4. `created`: **[ int ]**
   5. `locked`: **[ bool ]**
   6. `priority`: **[ int ]**
-  7. `parent`: **[ str:alias ]**
+  7. `parent`: **[ str:slug ]**
 
 * `metas`: **[ dict ]** query metas. any meta in a content can be use.
 

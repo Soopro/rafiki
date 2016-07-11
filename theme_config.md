@@ -16,7 +16,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `version`: **[ str ]** Theme version.
 
-* `alias`: **[ str:alias ]** Theme alias consist of only letters, numbers, underscores '\_' and hyphens '-'.
+* `slug`: **[ str:slug ]** Theme slug consist of only letters, numbers, underscores '\_' and hyphens '-'.
 
 * `title`: **[ str ]** Theme title.
 
@@ -37,7 +37,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 * `description`: **[ str ]** Theme description.
 
 * `templates`: **[ dict ]** template structure.
-	`[ str:alias ] : [ str ]`
+	`[ str:slug ] : [ str ]`
 
 
 ***Optional***
@@ -46,32 +46,32 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `textdomain`: **[ str ]** Translate file's textdomain, default is 'translate'
 
-* `hide_properties`: **[ list ]** A list of hidden property alias, those filed will hidden from property panel. property alias must same as the key of meta. etc., taxonomy, tag, parent.
+* `hide_properties`: **[ list ]** A list of hidden property slug, those filed will hidden from property panel. property slug must same as the key of meta. etc., taxonomy, tag, parent.
 
 *	`menus`: **[ dict ]** contain menu structure.
-	each menu is a **[ dict ]**, key is the menu `alias` **[ str:alias ]**.
+	each menu is a **[ dict ]**, key is the menu `slug` **[ str:slug ]**.
   1. `title`: **[ str ]**
 
-*	`content_types`: **[ dict ]** contain content types structure. single type is a **[ dict ]** key will be the content type `alias` **[ str:alias ]**.
+*	`content_types`: **[ dict ]** contain content types structure. single type is a **[ dict ]** key will be the content type `slug` **[ str:slug ]**.
   1. `title`: **[ str ]** content type title
   2. `status`: **[ int ]** content type display status, `0 hidden` `1 display`, if it's not given will be default as `1 display`.
 
 	( hidden content type can not display with by url directly,
 		but still can get form `pages` context. )
 
-* `reserved_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. the key will be the content `alias` **[ str:alias ]**.
+* `reserved_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. the key will be the content `slug` **[ str:slug ]**.
   1. `slug`: **[ str ]** reserved content slug, default is the key of item.
   2. `content_type`: **[ str ]** reserved content's content type, default is `page`.
   3. `template`: **[ str ]** reserved content's meta, default is the key.
   4. `meta`: **[ dict ]** optional for inject content metas, etc., `title`.
 
-* `allowed_slots`: **[ list ]** contain allowed extesion aliases. If current activated installable extension's `alias` is not in `allowed_slots`, the extension will display not "Not Supported" on admin panel.
+* `allowed_slots`: **[ list ]** contain allowed extesion sluges. If current activated installable extension's `slug` is not in `allowed_slots`, the extension will display not "Not Supported" on admin panel.
 
 *	`taxonomies`: **[ dict ]** contain taxonomies structure.
-	each taxonomy is a **[ dict ]**, key will be the taxonomy `alias` **[ str:alias ]**.
+	each taxonomy is a **[ dict ]**, key will be the taxonomy `slug` **[ str:slug ]**.
   1. `title": **[ str ]**
-  2. `content_types`: content_types is a **[ list ]** of **[ str:alias ]** , 
-    define content_types alias related to this taxonomy )
+  2. `content_types`: content_types is a **[ list ]** of **[ str:slug ]** , 
+    define content_types slug related to this taxonomy )
 
 * `options`: **[ dict ]** default theme options for `theme_meta.options`, those option could be change after activated.
 	1. `sortby` - **[ str ]** sort content by 'key', if the key start with `-` then sort result will be `ASC`, default is 'DESC'
@@ -93,7 +93,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 {
 	"version":"3.1.1",
-	"alias":"simba",
+	"slug":"simba",
 	"author":"Redy",
 	"textdomain":"translate",
 	"license": "MIT",
@@ -150,7 +150,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
   
   "taxonomies":{
     "category": {
-      "alias":,
+      "slug":,
       "title":"Categories",
       "content_types":["post"]
     }
@@ -218,8 +218,8 @@ Supported form view editor. you need add to top level of theme config
 **Base**
 
 * `editor_fields`: **[ dict ]**fields of form view
-  * `[ template_alias ]`: **[ list ]**
-    1 `key` : Data context alias, should not duplicated.
+  * `[ template_slug ]`: **[ list ]**
+    1 `key` : Data context slug, should not duplicated.
     2 `name`: The name display above input filed.
     3 `type`: Filed type.
 
@@ -252,7 +252,7 @@ Supported form view editor. you need add to top level of theme config
 {
   "editor_fields":{
 
-  	"[ template_alias ]": [
+  	"[ template_slug ]": [
 
   		{
   			"key": "title",
