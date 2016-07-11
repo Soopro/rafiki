@@ -59,9 +59,10 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	( hidden content type can not display with by url directly,
 		but still can get form `pages` context. )
 
-* `reserved_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. the key will be the content `slug` **[ str:slug ]**.
-  1. `content_type`: **[ str ]** reserved content's content type, default is `page`.
-  2. `template`: **[ str ]** reserved content's meta, default is the key.
+* `reserved_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. You can do some trick to short those options, but If you can not understand, just follow the original rules. 
+  1. `slug`: **[ str ]** reserved content's slug. **TRICK:** If the key include `/` the right part will be use for slug, otherwise the key will be the slug (remember it will be slugify anyway).
+  1. `content_type`: **[ str ]** reserved content's content type. default will be `page`. **TRICK:** If the key is include `/`, the left part will be content type.
+  2. `template`: **[ str ]** reserved content's template. default will slugify from the key. **TRICK:** you can also use **[ str ]** as the item value, that mean is use this value as template. such as `{"category": "this-is-my-template"}`.
   3. `meta`: **[ dict ]** optional for inject content metas, etc., `title`.
 
 * `allowed_slots`: **[ list ]** contain allowed extesion sluges. If current activated installable extension's `slug` is not in `allowed_slots`, the extension will display not "Not Supported" on admin panel.
@@ -132,6 +133,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
   
   "reserved_contents":{
     "xxx": {},
+    "post/index", true,
     "test": {
       "content_type": page,
       "template": "test",
