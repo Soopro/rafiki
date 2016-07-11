@@ -60,10 +60,9 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 		but still can get form `pages` context. )
 
 * `reserved_contents`: **[ dict ]** contain reserved contents, such as 'search', 'taxonomy', 'tags', the theme required those page to make some function work. the key will be the content `slug` **[ str:slug ]**.
-  1. `slug`: **[ str ]** reserved content slug, default is the key of item.
-  2. `content_type`: **[ str ]** reserved content's content type, default is `page`.
-  3. `template`: **[ str ]** reserved content's meta, default is the key.
-  4. `meta`: **[ dict ]** optional for inject content metas, etc., `title`.
+  1. `content_type`: **[ str ]** reserved content's content type, default is `page`.
+  2. `template`: **[ str ]** reserved content's meta, default is the key.
+  3. `meta`: **[ dict ]** optional for inject content metas, etc., `title`.
 
 * `allowed_slots`: **[ list ]** contain allowed extesion sluges. If current activated installable extension's `slug` is not in `allowed_slots`, the extension will display not "Not Supported" on admin panel.
 
@@ -139,10 +138,6 @@ Theme meta is load by this config file, after theme activated theme_meta.options
       "meta": {
         "title": "Test"
       }
-    },
-    "post-index": {
-      "slug": "index",
-      "content_type": "post"
     }
   },
   
