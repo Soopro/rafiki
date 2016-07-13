@@ -313,9 +313,12 @@ Call form modal.
      'name':'demand',
      'type':'event', 
      'fields': [
-       {'name':'sample-field',
+       {
+        'name':'sample-field',
         'label':'Sample field',
         'type':'select',
+        'placeholder': '',
+        'value:'',
         'required': false
        }
       ]
