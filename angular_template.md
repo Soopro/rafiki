@@ -292,31 +292,52 @@ Call collect modal.
 
 ```html
 <div swapper sup-editor-widget-collect ng-model="meta.swapper"
- default="[{'name':'0', 'value':'Swap Text'}]">
-   <b ng-repeat="item in meta.swapper">{{item.value}}</b>
+ default="[{'name':'0', 'value':'Swap Text', 'class':'swapper'}]">
+   <b ng-repeat="item in meta.swapper"
+      class="{{item.class}}">{{item.name}}:{{item.value}}</b>
 </div>
 ```
 
 ------------------------------------------
 
-### sup-editor-widget-notes
+### sup-editor-widget-form
 
-Call notes modal.
+Call form modal.
 
-*tips:* cnotes will return a list with dict (`title/content`).
+*tips:* form will return a dict for a web form.
 
 * `ng-model`: **[ list:notes ]** the bind notes data.
-* `limit`: **[ int ]** the limit of the notes, must > 0.
 * `default`: **[ str ]** Its a str but must be specific format list.
-  ```[{'title':'Title', 'Content':'.....'}]```
-  otherwise will covert to empty list.
+  ```
+    {
+     'name':'demand',
+     'type':'event', 
+     'fields': [
+       {'name':'sample-field',
+        'label':'Sample field',
+        'type':'select',
+        'required': false
+       }
+      ]
+    }
+  ```
+  otherwise will covert to empty dict.
 
 ***Example***
 
 ```html
-<div swapper sup-editor-widget-collect ng-model="meta.swapper"
- default="[{'title':'0', 'Content':'Swap Text'}]">
-   <b ng-repeat="item in meta.swapper">{{item.Content}}</b>
+<div sup-editor-widget-form
+     ng-model="meta.form"
+     default="{'name':'demand',
+               'type':'event',
+               'fields': [
+                 {'name':'sample-field',
+                  'label':'Sample field',
+                  'type':'select',
+                  'required': false
+                 }
+               ]}">
+   ...
 </div>
 ```
 

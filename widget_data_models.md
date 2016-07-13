@@ -64,17 +64,6 @@ A list of dict
 * `name`: item title. default is the index of item.
 * `value`: item value. default is the index of item.
 
-## list:notes
-
-A list of dict
-
-* `title`: item title. it's required.
-* `content`: item content.
-* ... may add more attributes future.
-
-## str:code
-
-A string might contain front-end codes. like js/html/css....
 
 ## dict:script
 
@@ -83,3 +72,13 @@ A fixed dict.
 * `code`: **[ str:code ]** code...
 * `meta`: **[ dict ]** meta for custom attributes.
 * `status`: **[ int ]** display status `0:off` `1:on`
+
+
+## dict:form
+
+A list of dict
+
+* `name`: item title. it's required.
+* `type`: item content.
+* `fields`: **[ list ]** a list of rules for fields.
+* `custom`: **[ str ]** the code of this custom type form.
