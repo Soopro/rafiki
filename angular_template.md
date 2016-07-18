@@ -307,39 +307,12 @@ Call form modal.
 *tips:* form will return a dict for a web form.
 
 * `ng-model`: **[ list:notes ]** the bind notes data.
-* `default`: **[ str ]** Its a str but must be specific format list.
-  ```
-    {
-     'name':'demand',
-     'type':'event', 
-     'fields': [
-       {
-        'name':'sample-field',
-        'label':'Sample field',
-        'type':'select',
-        'placeholder': '',
-        'value:'',
-        'required': false
-       }
-      ]
-    }
-  ```
-  otherwise will covert to empty dict.
 
 ***Example***
 
 ```html
 <div sup-editor-widget-form
-     ng-model="meta.form"
-     default="{'name':'demand',
-               'type':'event',
-               'fields': [
-                 {'name':'sample-field',
-                  'label':'Sample field',
-                  'type':'select',
-                  'required': false
-                 }
-               ]}">
+     ng-model="meta.form">
    ...
 </div>
 ```
