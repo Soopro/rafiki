@@ -149,7 +149,7 @@ There is may custom directives for template. Also support native angular directi
 
 ------------------------------------------
 
-### sup-editor-meta
+### sup-widget-text
 
 Make a string meta content editable field.
 
@@ -161,17 +161,17 @@ Make a string meta content editable field.
 ```html
 <!-- your might have css display problem, then use `<div>` to wrap it. -->
 <h1>
-<div sup-editor-meta ng-model="meta.title" default="I am default text."></div>
+<div sup-widget-text ng-model="meta.title" default="I am default text."></div>
 <h1>
 <!-- just like that -->
-<h2 sup-editor-meta ng-model="meta.description">Default Content<h2>
+<h2 sup-widget-text ng-model="meta.description">Default Content<h2>
 ```
 
 ***DO NOT***
 ```html
 <!-- your might have css display problem, then use `<div>` to wrap it. -->
 <h1>
-  <div sup-editor-meta ng-model="meta.title">{{meta.title}}</div>
+  <div sup-widget-text ng-model="meta.title">{{meta.title}}</div>
 <h1>
 ```
 This will massup rendering while you type any spical character. like this:
@@ -180,7 +180,7 @@ This will massup rendering while you type any spical character. like this:
 ```
 ------------------------------------------
 
-### sup-editor-media
+### sup-widget-media
 
 Call media modal.
 
@@ -188,20 +188,20 @@ Call media modal.
 * `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
 
 bind it outside image. (bind it on <img> will kill the directive icons.)
-if `sup-editor-media='video'` or `sup-editor-media='audio'` this media modal will only suppported video or audio at once, also the icon on canvas will change.
+if `sup-widget-media='video'` or `sup-widget-media='audio'` this media modal will only suppported video or audio at once, also the icon on canvas will change.
 
 
 ***Example***
 
 ```html
-<div sup-editor-media ng-model="meta.featured_img" allow-types="image, video">
+<div sup-widget-media ng-model="meta.featured_img" allow-types="image, video">
   <img src="{{meta.featured_img.src}}" title="{{meta.featured_img.title}}"/>
 </div>
 ```
 
 ------------------------------------------
 
-### sup-editor-widget-bg
+### sup-widget-bg
 
 Call background modal.
 
@@ -211,7 +211,7 @@ Call background modal.
 ***Example***
 
 ```html
-<div sup-editor-widget-bg ng-model="meta.background"
+<div sup-widget-bg ng-model="meta.background"
  allow-types="image, video"
  ng-style="{'background-image': meta.background.src}"
  class="{{meta.background.class}}">
@@ -220,7 +220,7 @@ Call background modal.
 
 ------------------------------------------
 
-### sup-editor-widget-script
+### sup-widget-script
 
 Call script modal.
 
@@ -233,12 +233,12 @@ Call script modal.
 ***Example***
 
 ```html
-<div sup-editor-widget-script ng-model="meta.script"></div>
+<div sup-widget-script ng-model="meta.script"></div>
 ```
 
 ------------------------------------------
 
-### sup-editor-widget-button
+### sup-widget-button
 
 Call button modal.
 
@@ -247,13 +247,13 @@ Call button modal.
 ***Example***
 
 ```html
-<button sup-editor-widget-button ng-model="meta.link_button"></button>
-<a href="#" sup-editor-widget-button ng-model="meta.link_button"></a>
+<button sup-widget-button ng-model="meta.link_button"></button>
+<a href="#" sup-widget-button ng-model="meta.link_button"></a>
 ```
 
 ------------------------------------------
 
-### sup-editor-widget-gallery
+### sup-widget-gallery
 
 Call gallery modal.
 
@@ -265,7 +265,7 @@ Call gallery modal.
 ***Example***
 
 ```html
-<div sup-editor-widget-gallery ng-model="meta.gallery"
+<div sup-widget-gallery ng-model="meta.gallery"
  allow-types="image, video">
   <figure> <!-- figure is not really necessary here -->
     <img src="{{meta.gallery[0].src}}" title="{{meta.gallery[0].title}}">
@@ -276,7 +276,7 @@ Call gallery modal.
 
 ------------------------------------------
 
-### sup-editor-widget-collect
+### sup-widget-collect
 
 Call collect modal.
 
@@ -291,7 +291,7 @@ Call collect modal.
 ***Example***
 
 ```html
-<div swapper sup-editor-widget-collect ng-model="meta.swapper"
+<div swapper sup-widget-collect ng-model="meta.swapper"
  default="[{'name':'0', 'value':'Swap Text', 'class':'swapper'}]">
    <b ng-repeat="item in meta.swapper"
       class="{{item.class}}">{{item.name}}:{{item.value}}</b>
@@ -300,7 +300,7 @@ Call collect modal.
 
 ------------------------------------------
 
-### sup-editor-widget-form
+### sup-widget-form
 
 Call form modal.
 
@@ -311,7 +311,7 @@ Call form modal.
 ***Example***
 
 ```html
-<div sup-editor-widget-form
+<div sup-widget-form
      ng-model="meta.form">
    ...
 </div>
@@ -576,11 +576,11 @@ Only supported few context, such as:
 * translate functions `_()` and `_t()`.
 
 You can just type those context as default value for directives below:
-* `sup-editor-meta`
-* `sup-editor-widget-script`
+* `sup-widget-text`
+* `sup-widget-script`
 * `sup-angular-wysiwyg`
 
 Example:
 ```
-<h2 sup-editor-meta ng-model="meta.description">Default {{_('Content')}}<h2>
+<h2 sup-widget-text ng-model="meta.description">Default {{_('Content')}}<h2>
 ```
