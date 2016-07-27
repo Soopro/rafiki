@@ -284,18 +284,54 @@ Call collect modal.
 
 * `ng-model`: **[ list:collect ]** the bind collect data.
 * `limit`: **[ int ]** the limit of the collection, must > 0.
-* `default`: **[ str ]** Its a str but must be specific format list.
-  ```[{'name':'Key', 'value':'Value'}]```
-  otherwise will covert to empty list.
+* `default`: **[ str ]** Its a str but must be a str or a dict with `text` key.
+  ```[{'text':'Text', 'Value'}]``` otherwise will ignore.
 
 ***Example***
 
 ```html
-<div swapper sup-widget-collect ng-model="meta.swapper"
- default="[{'name':'0', 'value':'Swap Text', 'class':'swapper'}]">
-   <b ng-repeat="item in meta.swapper"
-      class="{{item.class}}">{{item.name}}:{{item.value}}</b>
+<div sup-widget-collect ng-model="meta.swapper"
+     default="['Swap Text', {'text': 'Text'}]">
+   <b ng-repeat="item in meta.swapper">{{item.text}}</b>
 </div>
+```
+
+------------------------------------------
+
+### sup-widget-option
+
+Call option modal.
+
+*tips:* collect will return a list with dict (`name/value`).
+
+* `ng-model`: **[ list:collect ]** the bind collect data.
+* `structure`: **[ dict ]** Its a dict with specific format.
+  ```
+  {
+    'email':{'label': 'Email'},
+    'subject':{'label': 'Subject',
+               'default': 'Subject text here.'},
+    'open':{'label': 'Test', 'switch': true},
+    'choice':{'label': 'Test2', 'default': 'xxx',
+              'select':['xxx', 'Title']},
+  }
+  ```
+  otherwise will ignore. `switch` and `select` key for defined the field type.
+
+***Example***
+
+```html
+<div sup-widget-option
+     ng-model="meta.mailto"
+
+     structure="{
+       'email':{'label': 'Email'},
+       'subject':{'label': 'Subject',
+                  'default': 'Subject text here.'},
+       'open':{'label': 'Test', 'switch': true},
+       'choice':{'label': 'Test2', 'default': 'xxx',
+                 'select':['xxx', 'Title']},
+     }"></div>
 ```
 
 ------------------------------------------
