@@ -555,12 +555,30 @@ you have to use  `button.link | url` to make sure it is url.
 **Usage**
 
 ```html
-<h2> Current page args is: {{request.url|args([unqiue])}}"></h2>
+<h2> Current page args is: {{some_url|args([unqiue])}}"></h2>
 ```
 
 `unique`: **[ bool ]** return as a unquie value, otherwise might get a list if there multiple args with same key. default is `True`.
 
 ------------------------------------------
+
+### date_formatted
+
+**Output**
+
+**[ str ]** Return date str.
+
+**Usage**
+
+```html
+<h2> Date: {{date|date_formatted([to_format])}}"></h2>
+```
+
+The `date` must be a date string, such as `2012-01-02`.
+
+`to_format`: **[ str ]** give a date string format should to be, default is automatically create from current locale / lang.
+
+---------------------------------
 
 <br><br>
 
