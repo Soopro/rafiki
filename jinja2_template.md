@@ -309,6 +309,8 @@ Use `site_meta` context in theme template.
 
 * `banner`: **[ dict:background ]** site level banner.
 
+* `visit`: **[ dict ]** site visiting statistic.
+
 * ... *Custom fields*
 
 
