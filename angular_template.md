@@ -276,21 +276,21 @@ Call gallery modal.
 
 ------------------------------------------
 
-### sup-widget-collect
+### sup-widget-lines
 
-Call collect modal.
+Call lines modal.
 
-*tips:* collect will return a list with dict (`name/value`).
+*tips:* lines will return a list with dict (`name/value`).
 
-* `ng-model`: **[ list:collect ]** the bind collect data.
-* `limit`: **[ int ]** the limit of the collection, must > 0.
+* `ng-model`: **[ list ]** a list of dict, {'text': .... }.
+* `limit`: **[ int ]** the limit of the list, default is 0, no limit at all.
 * `default`: **[ str ]** Its a str but must be a str or a dict with `text` key.
-  ```[{'text':'Text', 'Value'}]``` otherwise will ignore.
+  ```[{'text':'Text...'}]``` otherwise will ignore.
 
 ***Example***
 
 ```html
-<div sup-widget-collect ng-model="meta.swapper"
+<div sup-widget-lines ng-model="meta.swapper"
      default="['Swap Text', {'text': 'Text'}]">
    <b ng-repeat="item in meta.swapper">{{item.text}}</b>
 </div>
@@ -342,7 +342,10 @@ Call form modal.
 
 *tips:* form will return a dict for a web form.
 
-* `ng-model`: **[ list:notes ]** the bind notes data.
+* `ng-model`: **[ dict ]** the web form data.
+
+***Tips***
+see widget data models document to understand the outputs.
 
 ***Example***
 
@@ -359,36 +362,35 @@ Call form modal.
 
 Query contents and inject to `query` context.
 
-`fields` and `metas` must use list or str, and following a complex rules:
-1. 'type' -> query anything have 'type' key.
-2. ['type', 'slug'] -> query anything have 'type' and 'slug' key.
-3. [{'type':'car'}] -> query 'type' is 'car'.
-4. [{'type':'car', not:true}] -> query 'type' is not 'car'.
-5. [{'type':''}] or [{'type':true}] -> query any have 'type' key.
-8. [{'type': false}] or [{'type': null}] -> query any don't have 'type' key.
-7. [{'type':'', not:true}] -> query any don't have 'type' key.
-8. [{'type': null, force:true}] -> query any 'type' is null.
-9. ['type', {slug:'test'}}] -> query have 'type' key and 'slug' is 'test'.
-
-* `fields`: **[ list ]** query fields (anything alse will skip). such as:
+* `attrs`: **[ list ]** query fields such as:
   1. `content_type`: **[ str:slug ]** <- use `type` for short.
   2. `slug`: **[ str:slug ]**
   3. `updated`: **[ int ]**
   4. `created`: **[ int ]**
-  5. `locked`: **[ bool ]**
   6. `priority`: **[ int ]**
   7. `parent`: **[ str:slug ]**
+anything else will turn to a `meta` attrs. such as `date` will to `meta.date`.
+`attrs` also following a complex rules:
+  1. 'type' -> query anything have 'type' key.
+  2. ['type', 'slug'] -> query anything have 'type' and 'slug' key.
+  3. [{'type':'car'}] -> query 'type' is 'car'.
+  4. [{'type':'car', not:true}] -> query 'type' is not 'car'.
+  5. [{'type':''}] or [{'type':true}] -> query any have 'type' key.
+  8. [{'type': false}] or [{'type': null}] -> query any don't have 'type' key.
+  7. [{'type':'', not:true}] -> query any don't have 'type' key.
+  8. [{'type': null, force:true}] -> query any 'type' is null.
+  9. ['type', {slug:'test'}}] -> query have 'type' key and 'slug' is 'test'.
 
-* `metas`: **[ dict ]** query metas. any meta in a content can be use.
-
-* `sortby`: **[ list/str ]** sort query results by keys, by default is sort by `ASC`, if the key is start with '-', the key will sort `DESC`. if multiple key is given by list, different key can use `DESC` or `ASC` by start with '-' or not.
+* `sortby`: **[ list/str ]** sort query results by keys, by default is sort by `DESC`, if the key is start with '+', the key will sort `ASC`.
   *** The result will automatically sort by 'priority' first as ASC, if you want custom it, just add the 'priority' in this feild by your self.***
 
-* `length`: **[ int ]** how many entires in results.
+* `perpage`: **[ int ]** how many entires in results.
 
-* `desc`: **[ bool ]** want DESC the whole results, default is true.
+* `paged`: **[ int ]** offset of current results.
+
+* `with-content`: **[ bool ]** with content field or not.
+
 * `priority`: **[ bool ]** default sort by priority at first, default is true.
-
 
 * `ng-model`: **[ list ]** must be keep results in inside `query`. otherwise maybe will pollute other context. etc., `query.pages`.
 
@@ -399,21 +401,45 @@ You can also sup-query='post' for query content_type feild is 'post', please not
 If the `fields` or `metas` value with list, that mean is only need match one of list element. If you want match multiple value with same key, you have to use several dict to describe it. etc., [{category: 'car'}, {category:'bike'}].
 and I am not sure it will work fine, so good luck...
 
+**Results**
+the results will be a dict.
+* contents: **[ list ]** a list of contents.
+* paged: current paged.
+* perpage: how many entires in one page.
+* max: max pages with current prepage.
+* count: 12 current result length.
+* total_count: total contents in database.
+
+
+```json
+{
+    "contents": [....],
+    "paged": 0,
+    "perpage": 12,
+    "max": 4,
+    "count": 12,
+    "total_count": 48
+}
+    
+```
+
 ***Example***
 
 ```html
-<div sup-query ng-model="query.works"
-  fields="[{'type':'works'}]"
-  metas="['featured_img', {'category':'car'}]"
-  length="12"
-  sortby="['date', 'updated']">
+<div sup-query
+     ng-model="query.works"
+     fields="['works'}, {'category':'car'}]"
+     perpage="12"
+     paged="0"
+     sortby="['date', 'updated']"
+     with-content="false">
   <div ng-repeat="page in query.pages">
     <p>{{page.content}}</p>
   </div>
 </div>
 
 <div sup-query='post' ng-model="query.posts">
-  <div ng-repeat="page in query.pages">
+  <div ng-repeat="page in query.posts.contents">
     <p>{{page.content}}</p>
   </div>
 </div>

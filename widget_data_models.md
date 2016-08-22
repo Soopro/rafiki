@@ -57,12 +57,11 @@ Additional attributes for 'video' and 'audio':
 * `target`: target for media link. '\_blank' or something else.
 * `class`: media class.
 
-## list:collect
+## list:lines
 
 A list of dict
 
-* `name`: item title. default is the index of item.
-* `value`: item value. default is the index of item.
+* `text`: the line text.
 
 
 ## dict:script
@@ -78,7 +77,14 @@ A fixed dict.
 
 A list of dict
 
-* `name`: item title. it's required.
-* `type`: item content.
-* `fields`: **[ list ]** a list of rules for fields.
-* `custom`: **[ str ]** the code of this custom type form.
+* action: **[ str ]** event slug or email address.
+* type: **[ str ]** form type, `mailto` or `event`.
+* fields: **[ list ]** a list of dict.
+  1. label: **[ str ]** field label.
+  2. name: **[ str ]** field name, this name is the name attr on html tag.
+  3. placeholder: **[ str ]** field placeholder.
+  4. type: **[ str ]** field types, input, textarea, selector, etc.,
+  5. value: **[ str ]** field value, some value is a pattern such as selector raido box...
+  6. status: **[ int ]** `0` Normal, `1` Required, `2` Disabled.
+  
+* custom: [** str **] custom form codes.
