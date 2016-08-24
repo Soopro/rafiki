@@ -253,20 +253,23 @@ Call button modal.
 
 ------------------------------------------
 
-### sup-widget-gallery
+### sup-widget-collection
 
-Call gallery modal.
+Call collection modal.
 
-*tips:* When you need display gallery as preview, you have to put first gallery item intro the gallery element.
+*tips:* When you need display collection as preview, you have to put first collection item intro the collection element.
 
-* `ng-model`: **[ list:gallery ]** the bind gallery data.
-* `allow-types`: **[ str ]** allow media types in gallery, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
+* `ng-model`: **[ list:collection ]** the bind collection data.
+* `allow-types`: **[ str ]** allow media types in collection, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
+* `sync-type`: **[ str ]** allow sync content type.
 
 ***Example***
 
 ```html
-<div sup-widget-gallery ng-model="meta.gallery"
- allow-types="image, video">
+<div sup-widget-gallery
+     ng-model="meta.gallery"
+     allow-types="image, video"
+     sync-type="post">
   <figure> <!-- figure is not really necessary here -->
     <img src="{{meta.gallery[0].src}}" title="{{meta.gallery[0].title}}">
     <p>{{meta.gallery[0].caption}}</p>
@@ -302,7 +305,7 @@ Call lines modal.
 
 Call option modal.
 
-*tips:* collect will return a list with dict (`name/value`).
+*tips:* option will return a list with dict (`name/value`).
 
 * `ng-model`: **[ list:collect ]** the bind collect data.
 * `structure`: **[ dict ]** Its a dict with specific format.
