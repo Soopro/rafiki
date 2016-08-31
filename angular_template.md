@@ -408,8 +408,7 @@ and I am not sure it will work fine, so good luck...
 the results will be a dict.
 * contents: **[ list ]** a list of contents.
 * paged: current paged.
-* perpage: how many entires in one page.
-* max: max pages with current prepage.
+* total_pages: max pages with current prepage.
 * count: 12 current result length.
 * total_count: total contents in database.
 
@@ -418,9 +417,8 @@ the results will be a dict.
 {
     "contents": [....],
     "paged": 0,
-    "perpage": 12,
-    "max": 4,
     "count": 12,
+    "total_pages": 4,
     "total_count": 48
 }
     
@@ -553,27 +551,6 @@ There is may custom filters for template. Also support native angular filters, b
 
 ---------------------------------
 
-### type
-
-type filter is base on saltshaker.
-
-**Output**
-
-**[ list ]** Return a list match the content type.
-
-**Usage**
-
-```html
-{% for page in pages | type('post'[, limit, sorty_by]) %}
-{% endfor %}
-```
-
-`limit`: **[ int ]** how many result you want to have.
-
-`sort_by`: **[ str ]** or **[ list ]** sort result by key. (this sort_by is share same rule with `rope`.)
-
----------------------------------
-
 ### url
 
 A relative path for link will cause problem while the base_url is dynamic.
@@ -642,6 +619,20 @@ you have to use  `button.link | url` to make sure it is url.
 The `date` must be a date string, such as `2012-01-02`.
 
 `to_format`: **[ str ]** give a date string format should to be, default is automatically create from current locale / lang.
+
+---------------------------------
+
+### is_empty
+
+**Output**
+
+**[ dict/list/str ]** Return bool tell it is empty or not.
+
+**Usage**
+
+```html
+<h2> List: {{contents|is_empty}}"></h2>
+```
 
 ---------------------------------
 
