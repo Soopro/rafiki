@@ -362,37 +362,11 @@ You can use query to get a list of contents. but every page can only query 3 tim
 
 #### query
 
+TODO 
+
 #### query_sides
 
-gutter is a helper function can find next/prev pages by specific attributes.
-
-**Output**
-
-**[ dict ]** Return a dict with simple information of next and prev page.
-
-The output dict with:
-
-
-all pages follow the single page structure:
-
-
-
-**Usage**
-
-```python
-gutter(pid, attrs)
-```
-
-`pid`: **[ str/ObjectID ]** current page id.
-
-`attrs`: **[ list/str ]** same as query `attrs` rules.
-
-
-***Example***
-
-```python
-page_gutter = gutter(meta.id, attrs)
-```
+TODO
 
 
 ------------------------------------
