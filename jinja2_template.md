@@ -311,9 +311,20 @@ Use `site_meta` context in theme template.
 
 * `banner`: **[ dict:background ]** site level banner.
 
-* `visit`: **[ dict ]** site visiting statistic.
-
 * ... *Custom fields*
+
+
+------------------------------------
+
+### Sa
+
+get sites visit status.
+
+* `pv`: page view of total site.
+* `vs`: visits.
+* `uv`: unique visitors.
+* `ip`: unique ip.
+* `page`: page view of single page, will skip this data if content_id not give.
 
 
 ------------------------------------
