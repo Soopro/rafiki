@@ -371,18 +371,16 @@ Query contents and inject to `query` context.
   3. `updated`: **[ int ]**
   4. `created`: **[ int ]**
   6. `priority`: **[ int ]**
-  7. `parent`: **[ str:slug ]**
-anything else will turn to a `meta` attrs. such as `date` will to `meta.date`.
-`attrs` also following a complex rules:
-  1. 'type' -> query anything have 'type' key.
-  2. ['type', 'slug'] -> query anything have 'type' and 'slug' key.
-  3. [{'type':'car'}] -> query 'type' is 'car'.
-  4. [{'type':'car', not:true}] -> query 'type' is not 'car'.
-  5. [{'type':''}] or [{'type':true}] -> query any have 'type' key.
-  8. [{'type': false}] or [{'type': null}] -> query any don't have 'type' key.
-  7. [{'type':'', not:true}] -> query any don't have 'type' key.
-  8. [{'type': null, force:true}] -> query any 'type' is null.
-  9. ['type', {slug:'test'}}] -> query have 'type' key and 'slug' is 'test'.
+  7. `parent`: **[ str:slug ]** anything else will turn to a `meta` attrs. such as `date` will to `meta.date`. `attrs` also following a complex rules:
+    1. 'type' -> query anything have 'type' key.
+    2. ['type', 'slug'] -> query anything have 'type' and 'slug' key.
+    3. [{'type':'car'}] -> query 'type' is 'car'.
+    4. [{'type':'car', not:true}] -> query 'type' is not 'car'.
+    5. [{'type':''}] or [{'type':true}] -> query any have 'type' key.
+    8. [{'type': false}] or [{'type': null}] -> query any don't have 'type' key.
+    7. [{'type':'', not:true}] -> query any don't have 'type' key.
+    8. [{'type': null, force:true}] -> query any 'type' is null.
+    9. ['type', {slug:'test'}}] -> query have 'type' key and 'slug' is 'test'.
 
 * `sortby`: **[ list/str ]** sort query results by keys, by default is sort by `DESC`, if the key is start with '+', the key will sort `ASC`.
   *** The result will automatically sort by 'priority' first as ASC, if you want custom it, just add the 'priority' in this feild by your self.***
@@ -405,7 +403,9 @@ If the `fields` or `metas` value with list, that mean is only need match one of 
 and I am not sure it will work fine, so good luck...
 
 **Results**
+
 the results will be a dict.
+
 * contents: **[ list ]** a list of contents.
 * paged: current paged.
 * total_pages: max pages with current prepage.
@@ -429,19 +429,20 @@ the results will be a dict.
 ```html
 <div sup-query
      ng-model="query.works"
-     fields="['works'}, {'category':'car'}]"
+     attrs="['works', {'category':'car'}]"
      perpage="12"
      paged="0"
+     priority="true"
      sortby="['date', 'updated']"
      with-content="false">
-  <div ng-repeat="page in query.pages">
-    <p>{{page.content}}</p>
+  <div ng-repeat="works in query.works.contents">
+    <p>{{works}}</p>
   </div>
 </div>
 
 <div sup-query='post' ng-model="query.posts">
-  <div ng-repeat="page in query.posts.contents">
-    <p>{{page.content}}</p>
+  <div ng-repeat="post in query.posts.contents">
+    <p>{{post}}</p>
   </div>
 </div>
 ```
@@ -449,7 +450,55 @@ the results will be a dict.
 
 ### sup-query-sides
 
-TODO
+Query next and previous contents by given content id and conditions. Then inject to `query` context.
+
+* `pid`: **[ str ]** A string of content id.
+* `attrs`: **[ list ]** Same as `sup-query`.
+* `limit`: **[ int ]** Query limit of before and after the content id. Default is 1, maximum is 6.
+* `priority`: **[ bool ]** Same as `sup-query`.
+* `sortby`: **[ list ]** Same as `sup-query`.
+
+***Example***
+
+```html
+<div sup-query-sides
+     ng-model="query.works_sides"
+     pid="57d53d6b1697963fdbd2ee25"
+     attrs="['works', {'category':'car'}]"
+     limit="1"
+     priority="true"
+     sortby="['date', 'updated']">
+  <div>
+    <p>{{query.works_sides.before}}</p>
+    <div ng-repeat="works in query.works_sides.entires_before">
+      <p>{{works}}</p>
+    </div>
+  </div>
+  <div>
+    <p>{{query.works_sides.after}}</p>
+    <div ng-repeat="works in query.works_sides.entires_after">
+      <p>{{works}}</p>
+    </div>
+  </div>
+</div>
+
+<div sup-query-sides='post'
+     pid="57d53d6b1697963fdbd2ee25"
+     ng-model="query.post_sides">
+  <div>
+    <p>{{query.post_sides.before}}</p>
+    <div ng-repeat="post in query.post_sides.entires_before">
+      <p>{{post}}</p>
+    </div>
+  </div>
+  <div>
+    <p>{{query.post_sides.after}}</p>
+    <div ng-repeat="post in query.post_sides.entires_after">
+      <p>{{post}}</p>
+    </div>
+  </div>
+</div>
+```
 
 ------------------------------------------
 

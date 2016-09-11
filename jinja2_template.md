@@ -363,16 +363,71 @@ Page is contain both 'meta' and 'content'.
 
 ### Query
 
-You can use query to get a list of contents. but every page can only query 3 times max.
+*Can only query 3 times max each request.*
 
 #### query
 
-TODO 
+You can use query a list of contents, The maximum results is limited by `60` top.
+
+
+**Output**
+
+**[ ditc ]** Return a content list with query information.
+
+* `contents`: **[ list ]** a list of parsed contents, each item is same as single page.
+* `paged`: **[ int ]** current paged.
+* `count`: **[ int ]** the count of the current results.
+* `total_count`: **[ int ]** total count of all matched contents.
+* `total_pages`: **[ int ]** total pages of all matched contents.
+
+
+**Usage**
+
+```
+query(attrs=[], paged=0, perpage=0, sortby=[], priority=True,   
+      with_content=False)
+```
+
+* `attrs`: **[ list/str ]** Attributes must be matched, limited to 5 tops. Each item of this list could be a str or a dict, for example `['product', {'price': 1, 'force': True, 'not': False}, {'taxonomy.category': 'girl', 'force': True, 'not': True}]`, mean is find all contents have `product` attribute and `price` is equals with `1`, and category is not girl. If the `attrs` is a str, that mean is find matched with a content_type. `{'content_type': <attrs:str>, force: True}`. 
+
+    1. `force`: **[ bool ]** Must exactly match the value, otherwith just check the attrbiute exists.
+    2. `not`: **[ bool ]** opposite this condition.
+    
+* `paged`: **[ int ]** current paged.
+
+* `perpage`: **[ int ]** how many entires in one page.
+
+* `sortby`: **[ list/str ]** sortby some attributes, limited to 5 tops. Each item of this list must be a str or tuple. The default direction is always descending, add `+` before the str make it ascending. Or you can use tuple, such as `('priority', 1)` - priority ascending, `('date', -1)` - date descending. if the sortby not given, will automatice try to use Theme Options `sortby`. finally will fallback to 'updated' if theme option doesn't have it.
+
+* `priority`: **[ bool ]** Use priority to effect sorting or not, default is True.
+
+* `with_content`: **[ bool ]** Results with full contents or not, default is False. if try use `with_content`, a `content` attribute will in each result items. and the result length will limited to ***24*** tops.
+
 
 #### query_sides
 
-TODO
+You can query next and previous contents by given content id and conditions.
 
+**Output**
+
+**[ ditc ]** Return next or previous contents.
+
+* `before`: **[ dict ]** previous content.
+* `after`: **[ dict ]** next content.
+* `entires_before`: **[ int ]** list of previous contents.
+* `entires_after`: **[ int ]** list of next contents.
+
+**Usage**
+
+```
+query_sides(pid, attrs=[], limit=0, sortby=[], priority=True)
+```
+
+* `pid`: **[ str ]** A string of content id.
+* `attrs`: **[ list/str ]** Same as `query`.
+* `limit`: **[ int ]** Query limit of before and after the content id.
+* `sortby`: **[ list/str ]** Same as `query`.
+* `priority`: **[ bool ]** Same as `query`.
 
 ------------------------------------
 
