@@ -205,7 +205,7 @@ if `sup-widget-media='video'` or `sup-widget-media='audio'` this media modal wil
 
 Call background modal.
 
-* `ng-model`: **[ dict:background ]** the bind media data.
+* `ng-model`: **[ dict:bg ]** the bind media data.
 * `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
 
 ***Example***

@@ -18,7 +18,7 @@ Additional attributes for 'video' and 'audio':
 * `autoplay`: media will loop.
 * `poster`: media poster.
 
-## dict:background
+## dict:bg
 
 * `src`: background media src.
 * `color`: background color.
@@ -32,7 +32,7 @@ Additional attributes for 'video' and 'audio':
 * `loop`: media will loop, always `true`.
 * `autoplay`: media will loop, always `true`.
 
-## list:gallery
+## list:collection
 
 A list of media
 

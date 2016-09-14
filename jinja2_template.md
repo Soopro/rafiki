@@ -307,9 +307,9 @@ Use `site_meta` context in theme template.
 
 * `seo`: **[ str ]** seo code.
 
-* `bg`: **[ dict:background ]** site level background.
+* `bg`: **[ dict:bg ]** site level background.
 
-* `banner`: **[ dict:background ]** site level banner.
+* `banner`: **[ dict:bg ]** site level banner.
 
 * `visit`: **[ dict ]** get sites visit status.
   1. `pv`: page view of total site.
