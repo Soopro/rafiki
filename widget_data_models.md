@@ -42,6 +42,7 @@ A list of media
 * `link`: media link if have one.
 * `target`: target for media link. '\_blank' or something else.
 * `class`: media class.
+* `misc`: misc contents, for extra html contents.
 
 Additional attributes for 'video' and 'audio':
 
