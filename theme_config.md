@@ -36,17 +36,12 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `description`: **[ str ]** Theme description.
 
-* `templates`: **[ dict ]** template structure.
-	`[ str:slug ] : [ str ]`
+* `templates`: **[ list ]** A list of template keys, those keys must same as the template file names for both `.html` and `.tpl`, such as `page` for `page.html` and `page.tpl`, ***YOU MUST PUT ALL TEMPLATE FILE IN ROOT OF THEME DIR***. A snapshot PNG image for this template is required. The PNG filename must be exactly same as template key, such as template key `page`, must use `page.png` etc,. All snapshot must place in `snapshot` folder root of the theme exactly.
 
 
 ***Optional***
 
 * `license`: **[ str ]** Theme license, etc., 'MIT'.
-
-* `textdomain`: **[ str ]** Translate file's textdomain, default is 'translate'
-
-* `hide_properties`: **[ list ]** A list of hidden property slug, those filed will hidden from property panel. property slug must same as the key of meta. etc., taxonomy, tag, parent.
 
 *	`menus`: **[ dict ]** contain menu structure.
 	each menu is a **[ dict ]**, key is the menu `slug` **[ str:slug ]**.
@@ -80,7 +75,8 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 	4. `date_format` - **[ str ]** date string format
 	5. `perpage` - **[ int ]** entries of perpage use for create template
   6. `markdown` - **[ bool ]** switcher of markdown mode in content
-	7. [ custom ] - options allow theme author to create custom options by self.
+  7. `ignore_locked_templates` - **[ bool ]** with this option, the template will not skip from editor list if it is belong to locked page, such as `index` page with template `index` is locked as default.
+	8. [ custom ] - options allow theme author to create custom options by self.
 
 * `styles`: **[ str ]** custom theme styles, you might need put this in your templates with `<style>` tags. 
   etc., ```<style>{{theme_meta.styles}}<style>```
