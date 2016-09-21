@@ -37,6 +37,8 @@ Additional attributes for 'video' and 'audio':
 A list of media
 
 * `src`: media src.
+* `type`: media type, could be `image`, `video`, `audio`, `application`
+* `mimetype`: media mimetype.
 * `title`: media title.
 * `caption`: media caption.
 * `link`: media link if have one.
