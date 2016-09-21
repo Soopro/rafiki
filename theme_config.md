@@ -36,7 +36,9 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `description`: **[ str ]** Theme description.
 
-* `templates`: **[ list ]** A list of template keys, those keys must same as the template file names for both `.html` and `.tpl`, such as `page` for `page.html` and `page.tpl`, ***YOU MUST PUT ALL TEMPLATE FILE IN ROOT OF THEME DIR***. A snapshot PNG image for this template is required. The PNG filename must be exactly same as template key, such as template key `page`, must use `page.png` etc,. All snapshot must place in `snapshot` folder root of the theme exactly.
+* `templates`: **[ list ]** A list of template keys, those keys must same as the template file names for both `.html` and `.tpl`, such as `page` for `page.html` and `page.tpl`, ***YOU MUST PUT ALL TEMPLATE FILE IN ROOT OF THEME DIR***. A snapshot PNG image for this template is required. The PNG filename must be exactly same as template key, such as template key `page`, must use `page.png` etc,. All snapshot must place in `snapshot` folder root of the theme exactly. Some template key is belong to *locked* page only, will not allow to other page, such as `index` etc,. You can also mark with `*` and `$` make theme allow to work with *locked* page. *Remember those mark are advance useage. They effect templates setting only. It DOES NOT mean the template filename should be marked as well.*
+  1. `*`: Mark to allowed by an pages.
+  2. `$`: Mark to allowed by `locked` pages.
 
 
 ***Optional***
