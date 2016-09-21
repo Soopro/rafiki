@@ -25,6 +25,7 @@ Additional attributes for 'video' and 'audio':
 * `repeat`: background image repeat mode `no-repeat`(default), `repeat`, `repeat-x`, `repeat-y`.
 * `style`: generate style by `src`,`color`,`repeat` for template to use more easier.
 * `class`: background media class.
+* `preset`: The preset key, usually is same as the css class name.
 
 Additional attributes for 'video' and 'audio':
 

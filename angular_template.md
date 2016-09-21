@@ -207,13 +207,17 @@ Call background modal.
 
 * `ng-model`: **[ dict:bg ]** the bind media data.
 * `allow-types`: **[ str ]** allow media type, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
-
+* `presets`: **[ list ]** Presets of background settings.
+  1. `key`: **[ str ]** Usually is same as the css class name.
+  2. `label`: **[ str ]** It is for name when display.
+  
 ***Example***
 
 ```html
 <div sup-widget-bg ng-model="meta.background"
- allow-types="image, video"
- ng-style="{'background-image': meta.background.src}"
+     allow-types="image, video"
+     presets="[{key: 'light-bg', label: _('Light Background')}]"
+     ng-style="{'background-image': meta.background.src}"
  class="{{meta.background.class}}">
 </div>
 ```
@@ -266,7 +270,7 @@ Call collection modal.
 ***Example***
 
 ```html
-<div sup-widget-gallery
+<div sup-widget-collection
      ng-model="meta.gallery"
      allow-types="image, video"
      sync-type="post">
@@ -307,19 +311,19 @@ Call option modal.
 
 *tips:* option will return a list with dict (`name/value`).
 
-* `ng-model`: **[ list:collect ]** the bind collect data.
-* `structure`: **[ dict ]** Its a dict with specific format.
+* `ng-model`: **[ dict ]** the options data.
+* `structure`: **[ list ]** Its a dict with specific format.
   ```
   {
-    'email':{'label': 'Email'},
-    'subject':{'label': 'Subject',
-               'default': 'Subject text here.'},
-    'open':{'label': 'Test', 'switch': true},
-    'choice':{'label': 'Test2', 'default': 'xxx',
-              'select':['xxx', 'Title']},
+    {'key': 'email', 'label': 'Email'},
+    {'key': 'subject', 'label': 'Subject', 'default': 'Subject text here.'},
+    {'key': 'open', 'label': 'Test', 'switch': true},
+    {'key': 'choice', 'label': 'Test2', 'default': 'xxx', 'select':['xxx', 'Title']},
   }
   ```
   otherwise will ignore. `switch` and `select` key for defined the field type.
+  1. `swicth`: **[ bool ]** mark as a switch. also can use 0 or 1.
+  2. `select`: **[ list ]** mark as a select by define a selection list, the value of each item can be `string` only.
 
 ***Example***
 
@@ -328,12 +332,11 @@ Call option modal.
      ng-model="meta.mailto"
 
      structure="{
-       'email':{'label': 'Email'},
-       'subject':{'label': 'Subject',
-                  'default': 'Subject text here.'},
-       'open':{'label': 'Test', 'switch': true},
-       'choice':{'label': 'Test2', 'default': 'xxx',
-                 'select':['xxx', 'Title']},
+       {'key': 'email', 'label': 'Email'},
+       {'key': 'subject', 'label': 'Subject', 'default': 'Subject text here.'},
+       {'key': 'open', 'label': 'Test', 'switch': true},
+       {'key': 'choice', 'label': 'Test2', 'default': 'xxx',
+        'select':['xxx', 'Title']},
      }"></div>
 ```
 

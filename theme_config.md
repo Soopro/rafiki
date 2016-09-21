@@ -14,7 +14,7 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 ***Required***
 
-* `version`: **[ str ]** Theme version.
+* `version`: **[ str ]** Theme version. Format `Major.Minor.Revision.[Dev]`. usually use 3 digital version number, the last one `Dev` is optional for developer. The system will create new payload when he first 2 digital is updated. The first 3 digtal should not be small then latest version. Since the version number usually use as args when load the static files on CDN, in this case you might need define a custom affix for the args, for example `1.0.2` is theme version, so the url can be `http://themefile.sample/style.css?1.0.2.r1`. The affix format is up to developer, but DO NOT add into theme config as part of the version.
 
 * `slug`: **[ str:slug ]** Theme slug consist of only letters, numbers, underscores '\_' and hyphens '-'.
 
@@ -36,9 +36,9 @@ Theme meta is load by this config file, after theme activated theme_meta.options
 
 * `description`: **[ str ]** Theme description.
 
-* `templates`: **[ list ]** A list of template keys, those keys must same as the template file names for both `.html` and `.tpl`, such as `page` for `page.html` and `page.tpl`, ***YOU MUST PUT ALL TEMPLATE FILE IN ROOT OF THEME DIR***. A snapshot PNG image for this template is required. The PNG filename must be exactly same as template key, such as template key `page`, must use `page.png` etc,. All snapshot must place in `snapshot` folder root of the theme exactly. Some template key is belong to *locked* page only, will not allow to other page, such as `index` etc,. You can also mark with `*` and `$` make theme allow to work with *locked* page. *Remember those mark are advance useage. They effect templates setting only. It DOES NOT mean the template filename should be marked as well.*
+* `templates`: **[ list ]** A list of template keys, those keys must same as the template file names for both `.html` and `.tpl`, such as `page` for `page.html` and `page.tpl`, ***YOU MUST PUT ALL TEMPLATE FILE IN ROOT OF THEME DIR***. A snapshot PNG image for this template is required. The PNG filename must be exactly same as template key, such as template key `page`, must use `page.png` etc,. All snapshot must place in `snapshot` folder root of the theme exactly. Some template key is belong to *locked* page only, will not allow to other page, such as `index` etc,. You can also mark with `*` and `^` make theme allow to work with *locked* page. *Remember those mark are advance useage. They effect templates setting only. It DOES NOT mean the template filename should be marked as well.*
   1. `*`: Mark to allowed by an pages.
-  2. `$`: Mark to allowed by `locked` pages.
+  2. `^`: Mark to allowed by `locked` pages.
 
 
 ***Optional***
