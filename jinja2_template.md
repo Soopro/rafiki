@@ -635,49 +635,6 @@ relative_path_args = glue(args)
 
 ---------------------------------
 
-### timemachine
-
-timemachine is a helper function can group data by datetime.
-
-**Output**
-
-**[ list ]** Return a list contained grouped datas.
-the format looks like ```[((2015,1), [{..grouped_list..}])]```
-
-
-**Usage**
-
-```python
-timemachine(raw_pages[, field, precision, time_format, reverse])
-```
-
-`raw_pages`: **[ list ]** original list you want to group.
-
-`field`: **[ str ]** default is `date`. group by this field. make sure the value must be kind of date, could be string date `str` `unicode`, timestamp `int`,
-datetime 'datetime', otherwise will crash. (you might never get `datetime` type of date, but timemachine supported it anyway.)
-
-`precision`: **[ str ]** default is `month`. precision of the datetime. could be:
-  * `year`
-  * `month` <- default, also will fail back if wrong value is given
-  * `day`
-  * `hour`
-  * `minute`
-  * `second`
-
-`time_format`: **[ str ]** default is `%Y-%m-%d`. unix time format.
-This is learn it from: https://docs.python.org/2/library/datetime.html
-
-`reverse`: **[ bool ]** default is `True`. reversed result, that will be 'DESC'
-
-***Example***
-
-```python
-sorted_pages = timemachine(pages, filed='date', precision='month',
-                           time_format='%Y-%m-%d', reverse=True)
-```
-
----------------------------------
-
 ### straw
 
 straw is a helper function can directly find one dict item by key/value form a list.
