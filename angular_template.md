@@ -251,32 +251,86 @@ Call button modal.
 ***Example***
 
 ```html
-<button sup-widget-button ng-model="meta.link_button"></button>
-<a href="#" sup-widget-button ng-model="meta.link_button"></a>
+<button sup-widget-button ng-model="meta.link"></button>
+<a href="#" sup-widget-button ng-model="meta.link"></a>
 ```
 
 ------------------------------------------
 
-### sup-widget-collection
+### sup-widget-carousel
 
-Call collection modal.
+Call carousel modal.
 
-*tips:* When you need display collection as preview, you have to put first collection item intro the collection element.
+*tips:* Mostly carousel is large image or video, only need display the first one while on editor.
 
-* `ng-model`: **[ list:collection ]** the bind collection data.
-* `allow-types`: **[ str ]** allow media types in collection, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
-* `sync-type`: **[ str ]** allow sync content type.
+* `ng-model`: **[ list:series ]** the bind series data.
+* `limit`: **[ int ]** limit of this series, default and max is 12.
+* `allow-types`: **[ str ]** allow media types in carousel, separate with ','. ('image, video') default is 'image', use '*' for all.
+
 
 ***Example***
 
 ```html
-<div sup-widget-collection
-     ng-model="meta.gallery"
-     allow-types="image, video"
-     sync-type="post">
-  <figure> <!-- figure is not really necessary here -->
-    <img src="{{meta.gallery[0].src}}" title="{{meta.gallery[0].title}}">
-    <p>{{meta.gallery[0].caption}}</p>
+<div sup-widget-carousel
+     ng-model="meta.carousel"
+     limit="6"
+     allow-types="image, video">
+  <figure ng-if="meta.carousel.length > 0">
+    <img ng-src="{{meta.carousel[0].src}}" title="{{meta.carousel[0].title}}">
+    <p>{{meta.carousel[0].caption}}</p>
+  </figure>
+</div>
+```
+
+------------------------------------------
+
+### sup-widget-series
+
+Call series modal.
+
+*tips:* series is similar with carousel, but all series usually display all items in editor. Series also allow to sync a taxonomy terms. 
+
+* `ng-model`: **[ list:series ]** the bind series data.
+* `limit`: **[ int ]** limit of this series, default and max is 32.
+* `allow-types`: **[ str ]** allow media types in series, separate with ','. ('image, video, audio') default is 'image', use '*' for all.
+* `taxonomy`: **[ str ]** allow sync content type.
+* `default`: **[ str ]** default data for this series, should be a list of dict with json string format.
+  ```
+   [
+     {
+       'title': _('Item Title'),
+       'caption': _('Click here to edit series item.'),
+       'src': theme_url+'/styles/default_thumbnail.png'
+     },
+     {
+       'title': _('Item Title'),
+       'caption': _('Click here to edit series item.'),
+       'src': theme_url+'/styles/default_thumbnail.png'
+     }
+   ]
+  ```
+
+**Sub Directive**
+
+Each item of series require a sub directive `sup-widget-series-item`.
+It must be work with ng-repeat as usual, because it is need $index to find the the item in list. Except the one for add new item, this is required to add a value to this attrbute, such as `new`, `add` or `create`. `sup-widget-series-item="new"` etc., otherwise the add series item will not funciton.
+
+***Example***
+
+```html
+<div sup-widget-series
+     ng-model="meta.series"
+     limit="24"
+     allow-types="*"
+     taxonomy="category">
+  <figure sup-widget-series-item
+          ng-repeat="item in meta.series">
+    <img ng-src="{{item.src}}" title="{{item.title}}">
+    <p>{{item.caption}}</p>
+  </figure>
+  <figure sup-widget-series-item="new">
+    <img ng-src="{{some_img_src}}" title="Default Title">
+    <p>{{'Add new Series Item'}}</p>
   </figure>
 </div>
 ```
@@ -507,7 +561,7 @@ Query next and previous contents by given content id and conditions. Then inject
 
 ### sup-editor-open
 
-Open to the new file. usually use with `sup-editor-content-query` to open the file from results repeat loop.
+Open to the new file. usually use with `sup-query` or `sup-query-sides` to open the file from results repeat loop.
 
 * `file`: **[ dict ]** the file data want to open.
 
@@ -516,6 +570,25 @@ Open to the new file. usually use with `sup-editor-content-query` to open the fi
 ```html
 <div ng-repeat="file in query.pages">
   <div sup-editor-open file="file"></div>
+</div>
+```
+
+------------------------------------------
+
+
+### sup-editor-create
+
+Create a new file. usually use after the content `sup-query` to create new file than edit it.
+
+* `type`: **[ str ]** content_type of the new file. default is the content type of current page.
+* `priority`: **[ str ]** Priority of the new file. This option is usual on homepage of a single page theme, Make more easy to understand how to create block page one by one. default is 0
+
+***Example***
+
+```html
+<div sup-editor-open
+     type="page"
+     prioirty="0">
 </div>
 ```
 

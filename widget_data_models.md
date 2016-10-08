@@ -33,12 +33,35 @@ Additional attributes for 'video' and 'audio':
 * `loop`: media will loop, always `true`.
 * `autoplay`: media will loop, always `true`.
 
-## list:collection
+## list:series
 
 A list of media
 
-* `src`: media src.
-* `type`: media type, could be `image`, `video`, `audio`, `application`
+* `src`: item media src.
+* `type`: item media type, could be `image`, `video`, `audio`, `application`
+* `mimetype`: item media mimetype.
+* `title`: item title.
+* `caption`: item caption.
+* `tags`: item tags, could be use for front-end sort.
+* `link`: item link if have one.
+* `target`: target for item link. '\_blank' or something else.
+* `class`: item class.
+* `misc`: misc contents, for extra html contents.
+
+Additional attributes for 'video' and 'audio':
+
+* `controls`: item media has controls or not.
+* `loop`: item media is loop or not.
+* `autoplay`: item media is autplay or not.
+* `poster`: item media poster.
+
+
+## list:carousel
+
+A list of carousel media
+
+* `src`: carousel src.
+* `type`: carousel type, could be `image`, `video`
 * `mimetype`: media mimetype.
 * `title`: media title.
 * `caption`: media caption.
@@ -47,12 +70,6 @@ A list of media
 * `class`: media class.
 * `misc`: misc contents, for extra html contents.
 
-Additional attributes for 'video' and 'audio':
-
-* `controls`: media has controls.
-* `loop`: media will loop.
-* `autoplay`: media will loop.
-* `poster`: media poster.
 
 ## dict:button
 
