@@ -214,7 +214,7 @@ Call background modal.
 ***Example***
 
 ```html
-<div sup-widget-bg ng-model="meta.background"
+<div sup-widget-bg ng-model="meta.bg"
      allow-types="image, video"
      presets="[{key: 'light-bg', label: _('Light Background')}]"
      ng-style="{'background-image': meta.background.src}"
@@ -763,6 +763,23 @@ The `date` must be a date string, such as `2012-01-02`.
 ```html
 <h2> List: {{contents|is_empty}}"></h2>
 ```
+
+---------------------------------
+
+### bg_img
+
+**Output**
+
+**[ str ]** Return bg image stylesheet by given image src.
+
+**Usage**
+
+```html
+<div style="{{meta.bg.src|bg_img([default_img_src, thumbnail])}}"></div>
+```
+
+`default_src`: **[ str ]** default img src if need.
+`thumbnail`: **[ bool ]** use thumbnail or not.
 
 ---------------------------------
 

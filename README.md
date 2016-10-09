@@ -1,4 +1,4 @@
-version: 1.10.6
+version: 1.10.7
 
 # Theme Develop Documentation
 

@@ -783,3 +783,18 @@ The `date` must be a date string, such as `2012-01-02`.
 `to_format`: **[ str ]** give a date string format should to be, default is automatically create from current locale / lang.
 
 ---------------------------------
+
+### bg_img
+
+**Output**
+
+**[ str ]** Return bg image stylesheet by given image src.
+
+**Usage**
+
+```html
+<div style="{{meta.bg.src|bg_img([default_img_src, thumbnail])}}"></div>
+```
+
+`default_src`: **[ str ]** default img src if need.
+`thumbnail`: **[ bool ]** use thumbnail or not.
