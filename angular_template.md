@@ -563,13 +563,17 @@ Query next and previous contents by given content id and conditions. Then inject
 
 Open to the new file. usually use with `sup-query` or `sup-query-sides` to open the file from results repeat loop.
 
-* `file`: **[ dict ]** the file data want to open.
+* `file`: **[ dict ]** the file data want to open. Or simply use directive attribute to pass the file data.
 
 ***Example***
 
 ```html
-<div ng-repeat="file in query.pages">
+<div ng-repeat="file in query.files.contents">
   <div sup-editor-open file="file"></div>
+</div>
+
+<div ng-repeat="item in query.others.contents">
+  <div sup-editor-open="item"></div>
 </div>
 ```
 
