@@ -598,7 +598,7 @@ Create a new file. usually use after the content `sup-query` to create new file 
 
 ------------------------------------------
 
-### sup-script
+### sup-script-loader
 
 Create safe script intro template. only limit domain will be allow.
 such as `libs.soopro.com`
@@ -610,7 +610,7 @@ such as `libs.soopro.com`
 ***Example***
 
 ```html
-<sup-script path="svg-sprites-render.min.js?md5=null"></sup-script>
+<sup-script-loader path="svg-sprites-render.min.js"></sup-script>
 ```
 
 ------------------------------------------
@@ -714,7 +714,7 @@ you have to use  `button.link | url` to make sure it is url.
 **Usage**
 
 ```html
-<h2> Current page path is: {{page.url | path([remove_args]) }}"></h2>
+<h2> Current page path is: {{page.url | path:remove_args }}"></h2>
 <h2> Current request path is: {{request.url | path }}"></h2>
 ```
 
@@ -731,7 +731,7 @@ you have to use  `button.link | url` to make sure it is url.
 **Usage**
 
 ```html
-<h2> Current page args is: {{some_url|args([unqiue])}}"></h2>
+<h2> Current page args is: {{some_url|args:unqiue}}"></h2>
 ```
 
 `unique`: **[ bool ]** return as a unquie value, otherwise might get a list if there multiple args with same key. default is `True`.
@@ -747,7 +747,7 @@ you have to use  `button.link | url` to make sure it is url.
 **Usage**
 
 ```html
-<h2> Date: {{date|date_formatted([to_format])}}"></h2>
+<h2> Date: {{date|date_formatted:to_format}}"></h2>
 ```
 
 The `date` must be a date string, such as `2012-01-02`.
@@ -779,33 +779,39 @@ The `date` must be a date string, such as `2012-01-02`.
 **Usage**
 
 ```html
-<div style="{{meta.bg.src|bg_img([default_img_src, thumbnail])}}"></div>
+<div style="{{meta.bg.src|bg_img:default_img_src:thumbnail}}"></div>
 ```
 
 `default_src`: **[ str ]** default img src if need.
 `thumbnail`: **[ bool ]** use thumbnail or not.
 
+
 ---------------------------------
 
-<br><br>
+### col_offset
 
+**Output**
 
-## Advance tricks
+**[ str/int ]** Calculate column offset value or class name. Simetime items is too few, can not full fill a row of columns, desiner have to move item little bit to make sure the alignments is nice.
 
-### Default content with context
+**Tips**
 
-Only supported few context, such as:
-* `theme_url`
-* `base_url`
-* `libs_url`
-* translate functions `_()` and `_t()`.
+For some css lib, *bootstrap* etc., only the first item should be offset.
 
-You can just type those context as default value for directives below:
-* `sup-widget-text`
-* `sup-widget-script`
-* `sup-angular-wysiwyg`
+**Usage**
 
-Example:
+```html
+<div class="col-sm-4 {{page.series|col_offset:'col-sm-offset-':4}}"></div>
 ```
-<h2 sup-widget-text ng-model="meta.description">Default {{_('Content')}}<h2>
-```
+
+`data`: **[ list/int ]** for the length of data.
+
+`pattern`: **[ str ]** output pattern, if this param is not string will return offset value as `int`. A `{}` in the pattern string is mark for offset output position. The offset value will output at end of pattern when `{}` not in there. Default is `None`.
+
+`column`: **[ int ]** The size of a single column. for example, bootstrap column `col-md-4` 4 is the size. Default is `4`.
+
+`row_columns`: **[ int ]** The Size of row. For example, bootstrap is 12. Default is `12`.
+
+
+---------------------------------
+
