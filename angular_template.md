@@ -313,7 +313,7 @@ Call series modal.
 **Sub Directive**
 
 Each item of series require a sub directive `sup-widget-series-item`.
-It must be work with ng-repeat as usual, because it is need $index to find the the item in list. Except the one for add new item, this is required to add a value to this attrbute, such as `new`, `add` or `create`. `sup-widget-series-item="new"` etc., otherwise the add series item will not funciton.
+It must be work with ng-repeat as usual, because it is need $index to find the the item in list. Except the one for add new item, this is required to add a value to this attrbute, such as `new`, `add`. `sup-widget-series-item="new"` etc., otherwise the add series item will not funciton.
 
 ***Example***
 
@@ -509,7 +509,7 @@ the results will be a dict.
 
 Query next and previous contents by given content id and conditions. Then inject to `query` context.
 
-* `pid`: **[ str ]** A string of content id.
+* `pid`: **[ str ]** A string of content id. default is current page id.
 * `attrs`: **[ list ]** Same as `sup-query`.
 * `limit`: **[ int ]** Query limit of before and after the content id. Default is 1, maximum is 6.
 * `priority`: **[ bool ]** Same as `sup-query`.
@@ -559,7 +559,28 @@ Query next and previous contents by given content id and conditions. Then inject
 
 ------------------------------------------
 
-### sup-editor-open
+### sup-query-refs
+
+You can query refs content by given content id. Then inject to `query` context.
+All refs content's content type can only be same as the given content.
+
+* `pid`: **[ str ]** A string of content id. default is current page id.
+
+***Example***
+
+```html
+<div sup-query-refs
+     ng-model="query.sec"
+     pid="meta.id">
+  <div ng-repeat="page in query.sec.contents">
+    <p>{{page}}</p>
+  </div>
+</div>
+```
+
+------------------------------------------
+
+### sup-widget-open
 
 Open to the new file. usually use with `sup-query` or `sup-query-sides` to open the file from results repeat loop.
 
@@ -569,31 +590,35 @@ Open to the new file. usually use with `sup-query` or `sup-query-sides` to open 
 
 ```html
 <div ng-repeat="file in query.files.contents">
-  <div sup-editor-open file="file"></div>
+  <div sup-widget-open file="file"></div>
 </div>
 
 <div ng-repeat="item in query.others.contents">
-  <div sup-editor-open="item"></div>
+  <div sup-widget-open="item"></div>
 </div>
 ```
 
 ------------------------------------------
 
 
-### sup-editor-create
+### sup-widget-create
 
-Create a new file. usually use after the content `sup-query` to create new file than edit it.
+Create a new file. usually use after the content `sup-query` or `sup-query-refs` to create new file than edit it.
 
 * `type`: **[ str ]** content_type of the new file. default is the content type of current page.
-* `priority`: **[ str ]** Priority of the new file. This option is usual on homepage of a single page theme, Make more easy to understand how to create block page one by one. default is 0
+* `refs`: **[ list ]** a list of reference files. Usually for single page site to connect and order with other pages. This list must be the result of sup-query-refs only.
+
+***Tips***
+The directive it self with attribute value `major` will create a big large icon button in editor view. otherwise just a normal size icon beside the binded DOM.
 
 ***Example***
 
 ```html
-<div sup-editor-open
-     type="page"
-     prioirty="0">
-</div>
+<div sup-widget-create type="page"></div>
+...
+...
+<div sup-query-refs ng-model="query.sections"></div>
+<div sup-widget-create="major" refs="query.sections"></div>
 ```
 
 ------------------------------------------

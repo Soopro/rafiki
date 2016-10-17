@@ -376,6 +376,7 @@ You can use query a list of contents, The maximum results is limited by `60` top
 
 * `contents`: **[ list ]** a list of parsed contents, each item is same as single page.
 * `paged`: **[ int ]** current paged.
+* `perpage`: **[ int ]** current perpage, perpage might be reformed.
 * `count`: **[ int ]** the count of the current results.
 * `total_count`: **[ int ]** total count of all matched contents.
 * `total_pages`: **[ int ]** total pages of all matched contents.
@@ -423,11 +424,33 @@ You can query next and previous contents by given content id and conditions.
 query_sides(pid, attrs=[], limit=0, sortby=[], priority=True)
 ```
 
-* `pid`: **[ str ]** A string of content id.
+* `pid`: **[ str ]** A content id. Default is current page id.
 * `attrs`: **[ list/str ]** Same as `query`.
 * `limit`: **[ int ]** Query limit of before and after the content id.
 * `sortby`: **[ list/str ]** Same as `query`.
 * `priority`: **[ bool ]** Same as `query`.
+
+
+#### query_refs
+
+You can query refs content by given content id. all refs content's content type can only be same as the given content.
+
+**Output**
+
+**[ ditc ]** Return refs contents.
+
+* `contents`: **[ dict ]** all valid refs contents.
+* `sources`: **[ dict ]** a list of refs content slug.
+* `count`: **[ int ]** count of valid refs contens.
+* `limit`: **[ int ]** limit of total refs storage.
+
+**Usage**
+
+```
+query_refs(pid=None)
+```
+
+* `pid`: **[ str ]** A content id. Default is current page id.
 
 ------------------------------------
 
