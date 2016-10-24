@@ -1,4 +1,4 @@
-version: 1.10.10
+version: 1.10.11
 
 # Theme Develop Documentation
 

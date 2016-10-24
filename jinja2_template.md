@@ -431,26 +431,19 @@ query_sides(pid, attrs=[], limit=0, sortby=[], priority=True)
 * `priority`: **[ bool ]** Same as `query`.
 
 
-#### query_refs
+#### segments
 
-You can query refs content by given content id. all refs content's content type can only be same as the given content.
+You can get segment contents once.
 
 **Output**
 
-**[ ditc ]** Return refs contents.
-
-* `contents`: **[ dict ]** all valid refs contents.
-* `sources`: **[ dict ]** a list of refs content slug.
-* `count`: **[ int ]** count of valid refs contens.
-* `limit`: **[ int ]** limit of total refs storage.
+**[ list ]** Return segment contents. Each content just same as a page.
 
 **Usage**
 
 ```
-query_refs(pid=None)
+{% set segments = segments() %}
 ```
-
-* `pid`: **[ str ]** A content id. Default is current page id.
 
 ------------------------------------
 

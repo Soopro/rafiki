@@ -263,10 +263,24 @@ Call carousel modal.
 
 *tips:* Mostly carousel is large image or video, only need display the first one while on editor.
 
-* `ng-model`: **[ list:series ]** the bind series data.
+* `ng-model`: **[ list:carousel ]** the bind carousel data.
 * `limit`: **[ int ]** limit of this series, default and max is 12.
 * `allow-types`: **[ str ]** allow media types in carousel, separate with ','. ('image, video') default is 'image', use '*' for all.
-
+* `default`: **[ str ]** default data for this series, should be a list of dict with json string format.
+  ```
+   [
+     {
+       'title': _('Item Title'),
+       'caption': _('Click here to edit series item.'),
+       'src': theme_url+'/styles/default_thumbnail.png'
+     },
+     {
+       'title': _('Item Title'),
+       'caption': _('Click here to edit series item.'),
+       'src': theme_url+'/styles/default_thumbnail.png'
+     }
+   ]
+  ```
 
 ***Example***
 
@@ -312,8 +326,8 @@ Call series modal.
 
 **Sub Directive**
 
-Each item of series require a sub directive `sup-widget-series-item`.
-It must be work with ng-repeat as usual, because it is need $index to find the the item in list. Except the one for add new item, this is required to add a value to this attrbute, such as `new`, `add`. `sup-widget-series-item="new"` etc., otherwise the add series item will not funciton.
+1. `series-item`: It must be work with ng-repeat as usual, because it is need $index to find the the item in list. 
+2. `series-item-create`: Create a new series item. Use `major` attribute to large button style.
 
 ***Example***
 
@@ -328,7 +342,7 @@ It must be work with ng-repeat as usual, because it is need $index to find the t
     <img ng-src="{{item.src}}" title="{{item.title}}">
     <p>{{item.caption}}</p>
   </figure>
-  <figure sup-widget-series-item="new">
+  <figure series-item-create>
     <img ng-src="{{some_img_src}}" title="Default Title">
     <p>{{'Add new Series Item'}}</p>
   </figure>
@@ -415,6 +429,37 @@ see widget data models document to understand the outputs.
    ...
 </div>
 ```
+
+------------------------------------------
+
+### sup-widget-segments
+
+Get segment contents and manage them.
+
+* `data`: a variable name to contain segment datas. Also can work with the directive attribute self.
+
+
+**Sub Directive**
+
+1. `segment`: It must be work with ng-repeat as usual, because it is need $index to find the the segment in list. 
+2. `segment-create`: Create a new segment. Use `major` attribute to large button style.
+
+
+***Example***
+
+```html
+<div sup-widget-segments="segments">
+  <div segment
+       ng-repeat="page in segments">
+    <p>{{page}}</p>
+  </div>
+  <div segment-create="major">
+    Create
+  </div>
+</div>
+```
+
+
 
 ------------------------------------------
 
@@ -553,27 +598,6 @@ Query next and previous contents by given content id and conditions. Then inject
     <div ng-repeat="post in query.post_sides.entires_after">
       <p>{{post}}</p>
     </div>
-  </div>
-</div>
-```
-
-------------------------------------------
-
-### sup-query-refs
-
-You can query refs content by given content id. Then inject to `query` context.
-All refs content's content type can only be same as the given content.
-
-* `pid`: **[ str ]** A string of content id. default is current page id.
-
-***Example***
-
-```html
-<div sup-query-refs
-     ng-model="query.sec"
-     pid="meta.id">
-  <div ng-repeat="page in query.sec.contents">
-    <p>{{page}}</p>
   </div>
 </div>
 ```
